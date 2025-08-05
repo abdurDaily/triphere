@@ -23,3 +23,21 @@ mobileLinks.forEach((link) => {
   link.addEventListener("click", closeMenu);
 });
 // * NAVIGATION END
+
+
+/**PRELOADER */
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  const mainContent = document.getElementById('main-content');
+  if (preloader && mainContent) {
+    preloader.style.opacity = '0';
+    preloader.style.pointerEvents = 'none';
+
+    setTimeout(() => {
+      preloader.remove();
+      mainContent.style.display = 'block'; // show content after preloader is removed
+    }, 600); // match fade out duration
+  }
+});
+
+/**PRELOADER END */

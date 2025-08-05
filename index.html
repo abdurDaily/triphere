@@ -6,6 +6,7 @@
     <title>Document</title>
   </head>
   <body>
+    <!-- NAVIGATION  -->
     <nav class="bg-white shadow sticky top-0 z-50">
       <div
         class="px-6 md:px-10 py-3 flex items-center justify-between relative"
@@ -14,9 +15,9 @@
         <a
           href="#"
           class="text-2xl font-bold text-orange-500 md:absolute md:left-1/2 md:-translate-x-1/2"
-          > <img class="w-[180px]" src="./assets/images/logo.webp" alt="">
-          </a
         >
+          <img class="w-[180px]" src="./assets/images/logo.webp" alt="" />
+        </a>
 
         <!-- Desktop Nav Left -->
         <div class="hidden md:flex items-center space-x-6">
@@ -177,6 +178,197 @@
         </div>
       </div>
     </nav>
+    <!-- FOOTER START -->
+    <footer
+      class="bg-gradient-to-br from-orange-50 to-white backdrop-blur-md shadow-inner border-t-4 border-orange-100"
+    >
+      <div class="container mx-auto px-4 py-16 animate-fade-in-up duration-700">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <!-- Company Info -->
+          <div class="space-y-4 animate-fade-in-up delay-100">
+            <a href="#" class="flex items-center space-x-2">
+              <img
+                class="w-48 transition-transform duration-300 hover:scale-105"
+                src="./assets/images/logo.webp"
+                alt="TripsHere Logo"
+              />
+            </a>
+            <p class="text-gray-700 leading-relaxed">
+              Your trusted travel partner for unforgettable journeys around the
+              world. Creating memories that last a lifetime.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow hover:bg-orange-100 transition hover:scale-110"
+              >
+                <iconify-icon
+                  icon="mdi:facebook"
+                  class="text-xl text-orange-500"
+                ></iconify-icon>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow hover:bg-orange-100 transition hover:scale-110"
+              >
+                <iconify-icon
+                  icon="mdi:twitter"
+                  class="text-xl text-orange-500"
+                ></iconify-icon>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow hover:bg-orange-100 transition hover:scale-110"
+              >
+                <iconify-icon
+                  icon="mdi:instagram"
+                  class="text-xl text-orange-500"
+                ></iconify-icon>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow hover:bg-orange-100 transition hover:scale-110"
+              >
+                <iconify-icon
+                  icon="mdi:youtube"
+                  class="text-xl text-orange-500"
+                ></iconify-icon>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="space-y-4 animate-fade-in-up delay-200">
+            <h3 class="text-xl font-semibold text-orange-600">Quick Links</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-orange-600 transition duration-300 hover:translate-x-1 inline-block"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-orange-600 transition duration-300 hover:translate-x-1 inline-block"
+                  >Packages</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-orange-600 transition duration-300 hover:translate-x-1 inline-block"
+                  >Visa Process</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-orange-600 transition duration-300 hover:translate-x-1 inline-block"
+                  >Air Tickets</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-orange-600 transition duration-300 hover:translate-x-1 inline-block"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-orange-600 transition duration-300 hover:translate-x-1 inline-block"
+                  >Gallery</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div class="space-y-4 animate-fade-in-up delay-300">
+            <h3 class="text-xl font-semibold text-orange-600">Services</h3>
+            <ul class="space-y-2 text-gray-700">
+              <li class="hover:translate-x-1 transition">Flight Booking</li>
+              <li class="hover:translate-x-1 transition">Hotel Reservation</li>
+              <li class="hover:translate-x-1 transition">Travel Insurance</li>
+              <li class="hover:translate-x-1 transition">Visa Assistance</li>
+              <li class="hover:translate-x-1 transition">Car Rental</li>
+              <li class="hover:translate-x-1 transition">Tour Guides</li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="space-y-4 animate-fade-in-up delay-500">
+            <h3 class="text-xl font-semibold text-orange-600">Stay Updated</h3>
+            <p class="text-gray-700">
+              Subscribe to our newsletter for the latest travel deals and
+              destinations.
+            </p>
+            <div class="space-y-2">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
+              />
+              <button
+                class="w-full bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition hover:scale-105"
+              >
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div
+          class="border-t border-orange-200 mt-12 pt-8 animate-fade-in-up delay-700"
+        >
+          <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center md:text-left text-gray-700"
+          >
+            <div
+              class="flex items-center justify-center md:justify-start space-x-2"
+            >
+              <iconify-icon
+                icon="mdi:email"
+                class="text-orange-600 text-xl animate-pulse"
+              ></iconify-icon>
+              <span>contact@tripshere.com</span>
+            </div>
+            <div
+              class="flex items-center justify-center md:justify-start space-x-2"
+            >
+              <iconify-icon
+                icon="mdi:phone"
+                class="text-orange-600 text-xl animate-pulse"
+              ></iconify-icon>
+              <span>+1 (555) 123-4567</span>
+            </div>
+            <div
+              class="flex items-center justify-center md:justify-start space-x-2"
+            >
+              <iconify-icon
+                icon="mdi:map-marker"
+                class="text-orange-600 text-xl animate-pulse"
+              ></iconify-icon>
+              <span>123 Travel Street, City</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div
+          class="border-t border-orange-200 mt-8 pt-6 text-center text-sm text-gray-600 animate-fade-in-up delay-800"
+        >
+          © 2024 TripsHere. All rights reserved. |
+          <a href="#" class="hover:text-orange-500">Privacy Policy</a> |
+          <a href="#" class="hover:text-orange-500">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+    <!-- FOOTER END -->
 
     <!-- Tailwind & Iconify CDN -->
     <script src="https://cdn.tailwindcss.com"></script>

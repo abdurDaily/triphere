@@ -32,7 +32,7 @@
             href="#"
             class="text-2xl font-bold text-orange-500 md:absolute md:left-1/2 md:-translate-x-1/2"
           >
-            <img class="w-[180px]" src="./assets/images/logo.webp" alt="" />
+            <img class="w-[180px]" src="./assets/images/logo.webp" alt="Logo" />
           </a>
 
           <!-- Desktop Nav Left -->
@@ -92,12 +92,12 @@
           <div class="hidden md:flex space-x-3">
             <a
               href="#"
-              class="border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-4 py-2 rounded transition"
+              class="border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-4 py-2 rounded-full font-medium shadow-sm transition-all duration-300"
               >Blog</a
             >
             <a
               href="#"
-              class="bg-orange-500 text-white hover:bg-orange-600 px-4 py-2 rounded transition"
+              class="bg-orange-500 text-white hover:bg-orange-600 px-4 py-2 rounded-full font-medium shadow-sm transition-all duration-300"
               >Contact</a
             >
           </div>
@@ -180,173 +180,545 @@
             >Destination</a
           >
 
-          <div
-            class="mt-4 flex flex-wrap gap-3 justify-center md:justify-start"
-          >
+          <!-- Styled Mobile Buttons -->
+          <div class="mt-4 flex flex-wrap gap-3 justify-start">
             <a
               href="#"
-              class="mobile-link border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-6 py-2 rounded-full font-medium shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
+              class="mobile-link flex-1 text-center border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-4 py-2 rounded-full font-medium shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105 min-w-[100px]"
             >
               Blog
             </a>
             <a
               href="#"
-              class="mobile-link bg-orange-500 text-white hover:bg-orange-600 px-6 py-2 rounded-full font-medium shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105"
+              class="mobile-link flex-1 text-center bg-orange-500 text-white hover:bg-orange-600 px-4 py-2 rounded-full font-medium shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105 min-w-[100px]"
             >
               Contact
             </a>
           </div>
         </div>
       </nav>
+
       <!-- NAVIGATION END -->
+
+      <!-- HERO -->
+      <section
+        class="relative min-h-screen flex items-center justify-center overflow-hidden"
+      >
+        <!-- Background Gradient -->
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-800"
+        ></div>
+
+        <!-- Background Image -->
+        <div
+          class="absolute inset-0 opacity-20"
+          style="
+            background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+          "
+        ></div>
+
+        <!-- Content -->
+        <div class="relative z-10 container mx-auto px-4 text-center">
+          <div class="animate-fade-in">
+            <h1
+              class="text-3xl md:text-7xl font-bold text-white mb-6 leading-tight"
+            >
+              Discover Your Next
+              <span class="block text-orange-500">Adventure</span>
+            </h1>
+            <p class="text-xl md:text-lg text-white/90 mb-8 max-w-3xl mx-auto">
+              Experience the world like never before with our curated travel
+              packages, seamless visa processing, and unforgettable journeys.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <button
+                class="px-6 py-3 text-sm font-semibold rounded-lg bg-orange-500 text-white hover:bg-orange-600 shadow-lg animate-pulse"
+              >
+                Explore Packages
+              </button>
+              <button
+                class="px-6 py-3 text-sm font-semibold rounded-lg border border-white text-white hover:bg-white hover:text-gray-900"
+              >
+                Watch Our Story
+              </button>
+            </div>
+          </div>
+
+          <!-- Search Card -->
+          <div
+            class="max-w-4xl mx-auto p-6 bg-white/95 backdrop-blur-sm rounded-xl shadow-xl animate-fade-in"
+          >
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+              <!-- Destination -->
+              <div
+                class="flex items-center space-x-3 p-3 rounded-lg bg-gray-100"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 text-orange-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 12.414M9.586 8.586L6.343 5.343a8 8 0 1111.314 11.314z"
+                  />
+                </svg>
+                <div class="flex-1">
+                  <label class="block text-sm font-medium text-gray-600"
+                    >Destination</label
+                  >
+                  <input
+                    type="text"
+                    placeholder="Where to?"
+                    class="w-full bg-transparent border-none outline-none text-gray-800 placeholder:text-gray-400"
+                  />
+                </div>
+              </div>
+
+              <!-- Check-in -->
+              <div
+                class="flex items-center space-x-3 p-3 rounded-lg bg-gray-100"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 text-orange-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10m-10 4h6m2 5a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <div class="flex-1">
+                  <label class="block text-sm font-medium text-gray-600"
+                    >Check-in</label
+                  >
+                  <input
+                    type="date"
+                    class="w-full bg-transparent border-none outline-none text-gray-800"
+                  />
+                </div>
+              </div>
+
+              <!-- Guests -->
+              <div
+                class="flex items-center space-x-3 p-3 rounded-lg bg-gray-100"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 text-orange-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 20h5v-2a4 4 0 00-4-4h-1M9 20H4v-2a4 4 0 014-4h1m5-4a4 4 0 11-8 0 4 4 0 018 0z"
+                  />
+                </svg>
+                <div class="flex-1">
+                  <label class="block text-sm font-medium text-gray-600"
+                    >Guests</label
+                  >
+                  <select
+                    class="w-full bg-transparent border-none outline-none text-gray-800"
+                  >
+                    <option>2 Adults</option>
+                    <option>1 Adult</option>
+                    <option>3 Adults</option>
+                    <option>4+ Adults</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Search Button -->
+              <button
+                class="flex items-center justify-center h-full px-4 py-3 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-lg shadow-md hover:opacity-90"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HERO END -->
 
       <!-- FEATURES -->
       <section class="py-20 bg-gradient-to-b from-white to-blue-50">
-      <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
-        <!-- Heading -->
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold mb-4">
-            Featured Travel <span class="text-[#ea580c]">Packages</span>
-          </h2>
-          <p class="text-sm text-gray-600 max-w-2xl mx-auto">
-            Discover our most popular destinations with carefully crafted itineraries designed to create unforgettable memories.
-          </p>
-        </div>
-
-        <!-- Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Card Start -->
-          <div class="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
-            <div class="relative">
-              <img
-                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
-                alt="Tropical Paradise Escape"
-                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <!-- Save badge -->
-              <div class="absolute top-4 left-4">
-                <span class="bg-blue-100 text-blue-600 text-xs font-semibold px-3 py-1 rounded-full">
-                  Save $500
-                </span>
-              </div>
-              <!-- Rating -->
-              <div class="absolute top-4 right-4 bg-black/40 backdrop-blur-sm rounded-full px-3 py-1">
-                <div class="flex items-center space-x-1 text-white text-sm">
-                  <iconify-icon icon="mdi:star" class="text-yellow-400 text-base"></iconify-icon>
-                  <span>4.9</span>
-                  <span>(128)</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card content -->
-            <div class="p-5 space-y-4 text-center sm:text-left">
-              <div>
-                <h3 class="text-xl font-semibold group-hover:text-blue-600 transition-colors">
-                  Tropical Paradise Escape
-                </h3>
-                <div class="flex items-center justify-center sm:justify-start text-sm text-gray-500">
-                  <iconify-icon icon="mdi:map-marker" class="mr-1 text-lg"></iconify-icon>
-                  Maldives
-                </div>
-              </div>
-
-              <div class="flex justify-between text-sm text-gray-500">
-                <div class="flex items-center">
-                  <iconify-icon icon="mdi:calendar-clock" class="mr-1 text-lg"></iconify-icon>
-                  7 Days, 6 Nights
-                </div>
-                <div class="flex items-center">
-                  <iconify-icon icon="mdi:account-group" class="mr-1 text-lg"></iconify-icon>
-                  Up to 4 guests
-                </div>
-              </div>
-
-              <div class="flex flex-wrap justify-center sm:justify-start gap-2 text-xs">
-                <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded-full border border-blue-200">All Inclusive</span>
-                <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded-full border border-blue-200">Beachfront Villa</span>
-                <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded-full border border-blue-200">Spa Access</span>
-              </div>
-
-              <div class="flex items-center justify-between">
-                <div>
-                  <span class="text-2xl font-bold text-blue-600">$2,499</span>
-                  <span class="text-sm text-gray-400 line-through ml-2">$2,999</span>
-                </div>
-                <span class="text-xs text-gray-500">per person</span>
-              </div>
-
-              <button class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg py-3 hover:opacity-90 transition-all">
-                View Details
-              </button>
-            </div>
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
+          <!-- Heading -->
+          <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">
+              Featured Travel <span class="text-[#137092]">Packages</span>
+            </h2>
+            <p class="text-sm text-gray-600 max-w-2xl mx-auto">
+              Discover our most popular destinations with carefully crafted
+              itineraries designed to create unforgettable memories.
+            </p>
           </div>
-          <!-- Card End -->
 
-          <!-- Duplicate Card (2nd sample) -->
-          <div class="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
-            <div class="relative">
-              <img
-                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
-                alt="Tropical Paradise Escape"
-                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              <div class="absolute top-4 left-4">
-                <span class="bg-blue-100 text-blue-600 text-xs font-semibold px-3 py-1 rounded-full">Save $500</span>
-              </div>
-              <div class="absolute top-4 right-4 bg-black/40 backdrop-blur-sm rounded-full px-3 py-1">
-                <div class="flex items-center space-x-1 text-white text-sm">
-                  <iconify-icon icon="mdi:star" class="text-yellow-400 text-base"></iconify-icon>
-                  <span>4.9</span>
-                  <span>(128)</span>
+          <!-- Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Card Start -->
+            <div
+              class="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden"
+            >
+              <div class="relative">
+                <img
+                  src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+                  alt="Tropical Paradise Escape"
+                  class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <!-- Save badge -->
+                <div class="absolute top-4 left-4">
+                  <span
+                    class="bg-blue-100 text-[#137092] text-xs font-semibold px-3 py-1 rounded-full"
+                  >
+                    Save $500
+                  </span>
+                </div>
+                <!-- Rating -->
+                <div
+                  class="absolute top-4 right-4 bg-black/40 backdrop-blur-sm rounded-full px-3 py-1"
+                >
+                  <div class="flex items-center space-x-1 text-white text-sm">
+                    <iconify-icon
+                      icon="mdi:star"
+                      class="text-yellow-400 text-base"
+                    ></iconify-icon>
+                    <span>4.9</span>
+                    <span>(128)</span>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="p-5 space-y-4 text-center sm:text-left">
-              <div>
-                <h3 class="text-xl font-semibold group-hover:text-blue-600 transition-colors">Tropical Paradise Escape</h3>
-                <div class="flex items-center justify-center sm:justify-start text-sm text-gray-500">
-                  <iconify-icon icon="mdi:map-marker" class="mr-1 text-lg"></iconify-icon>
-                  Maldives
-                </div>
-              </div>
-              <div class="flex justify-between text-sm text-gray-500">
-                <div class="flex items-center">
-                  <iconify-icon icon="mdi:calendar-clock" class="mr-1 text-lg"></iconify-icon>
-                  7 Days, 6 Nights
-                </div>
-                <div class="flex items-center">
-                  <iconify-icon icon="mdi:account-group" class="mr-1 text-lg"></iconify-icon>
-                  Up to 4 guests
-                </div>
-              </div>
-              <div class="flex flex-wrap justify-center sm:justify-start gap-2 text-xs">
-                <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded-full border border-blue-200">All Inclusive</span>
-                <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded-full border border-blue-200">Beachfront Villa</span>
-                <span class="bg-blue-50 text-blue-600 px-2 py-1 rounded-full border border-blue-200">Spa Access</span>
-              </div>
-              <div class="flex items-center justify-between">
+
+              <!-- Card content -->
+              <div class="p-5 space-y-4 text-center sm:text-left">
                 <div>
-                  <span class="text-2xl font-bold text-blue-600">$2,499</span>
-                  <span class="text-sm text-gray-400 line-through ml-2">$2,999</span>
+                  <h3
+                    class="text-xl font-semibold group-hover:text-[#137092] transition-colors"
+                  >
+                    Tropical Paradise Escape
+                  </h3>
+                  <div
+                    class="flex items-center justify-center sm:justify-start text-sm text-gray-500"
+                  >
+                    <iconify-icon
+                      icon="mdi:map-marker"
+                      class="mr-1 text-lg"
+                    ></iconify-icon>
+                    Maldives
+                  </div>
                 </div>
-                <span class="text-xs text-gray-500">per person</span>
+
+                <div class="flex justify-between text-sm text-gray-500">
+                  <div class="flex items-center">
+                    <iconify-icon
+                      icon="mdi:calendar-clock"
+                      class="mr-1 text-lg"
+                    ></iconify-icon>
+                    7 Days, 6 Nights
+                  </div>
+                  <div class="flex items-center">
+                    <iconify-icon
+                      icon="mdi:account-group"
+                      class="mr-1 text-lg"
+                    ></iconify-icon>
+                    Up to 4 guests
+                  </div>
+                </div>
+
+                <div
+                  class="flex flex-wrap justify-center sm:justify-start gap-2 text-xs"
+                >
+                  <span
+                    class="bg-[#137092] text-white px-2 py-1 rounded-full border border-blue-200"
+                    >All Inclusive</span
+                  >
+                  <span
+                    class="bg-[#137092] text-white px-2 py-1 rounded-full border border-blue-200"
+                    >Beachfront Villa</span
+                  >
+                  <span
+                    class="bg-[#137092] text-white px-2 py-1 rounded-full border border-blue-200"
+                    >Spa Access</span
+                  >
+                </div>
+
+                <div class="flex items-center justify-between">
+                  <div>
+                    <span class="text-2xl font-bold text-[#f97316]"
+                      >$2,499</span
+                    >
+                    <span class="text-sm text-[#f97316] line-through ml-2"
+                      >$2,999</span
+                    >
+                  </div>
+                  <span class="text-xs text-gray-500">per person</span>
+                </div>
+
+                <button
+                  class="w-full bg-[#137092] text-white rounded-lg py-3 hover:opacity-90 transition-all"
+                >
+                  View Details
+                </button>
               </div>
-              <button class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg py-3 hover:opacity-90 transition-all">
-                View Details
-              </button>
             </div>
+            <!-- Card End -->
+
+            <!-- Card Start -->
+            <div
+              class="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden"
+            >
+              <div class="relative">
+                <img
+                  src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+                  alt="Tropical Paradise Escape"
+                  class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <!-- Save badge -->
+                <div class="absolute top-4 left-4">
+                  <span
+                    class="bg-blue-100 text-[#137092] text-xs font-semibold px-3 py-1 rounded-full"
+                  >
+                    Save $500
+                  </span>
+                </div>
+                <!-- Rating -->
+                <div
+                  class="absolute top-4 right-4 bg-black/40 backdrop-blur-sm rounded-full px-3 py-1"
+                >
+                  <div class="flex items-center space-x-1 text-white text-sm">
+                    <iconify-icon
+                      icon="mdi:star"
+                      class="text-yellow-400 text-base"
+                    ></iconify-icon>
+                    <span>4.9</span>
+                    <span>(128)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card content -->
+              <div class="p-5 space-y-4 text-center sm:text-left">
+                <div>
+                  <h3
+                    class="text-xl font-semibold group-hover:text-[#137092] transition-colors"
+                  >
+                    Tropical Paradise Escape
+                  </h3>
+                  <div
+                    class="flex items-center justify-center sm:justify-start text-sm text-gray-500"
+                  >
+                    <iconify-icon
+                      icon="mdi:map-marker"
+                      class="mr-1 text-lg"
+                    ></iconify-icon>
+                    Maldives
+                  </div>
+                </div>
+
+                <div class="flex justify-between text-sm text-gray-500">
+                  <div class="flex items-center">
+                    <iconify-icon
+                      icon="mdi:calendar-clock"
+                      class="mr-1 text-lg"
+                    ></iconify-icon>
+                    7 Days, 6 Nights
+                  </div>
+                  <div class="flex items-center">
+                    <iconify-icon
+                      icon="mdi:account-group"
+                      class="mr-1 text-lg"
+                    ></iconify-icon>
+                    Up to 4 guests
+                  </div>
+                </div>
+
+                <div
+                  class="flex flex-wrap justify-center sm:justify-start gap-2 text-xs"
+                >
+                  <span
+                    class="bg-[#137092] text-white px-2 py-1 rounded-full border border-blue-200"
+                    >All Inclusive</span
+                  >
+                  <span
+                    class="bg-[#137092] text-white px-2 py-1 rounded-full border border-blue-200"
+                    >Beachfront Villa</span
+                  >
+                  <span
+                    class="bg-[#137092] text-white px-2 py-1 rounded-full border border-blue-200"
+                    >Spa Access</span
+                  >
+                </div>
+
+                <div class="flex items-center justify-between">
+                  <div>
+                    <span class="text-2xl font-bold text-[#f97316]"
+                      >$2,499</span
+                    >
+                    <span class="text-sm text-[#f97316] line-through ml-2"
+                      >$2,999</span
+                    >
+                  </div>
+                  <span class="text-xs text-gray-500">per person</span>
+                </div>
+
+                <button
+                  class="w-full bg-[#137092] text-white rounded-lg py-3 hover:opacity-90 transition-all"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+            <!-- Card End -->
+
+            <!-- Card Start -->
+            <div
+              class="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden"
+            >
+              <div class="relative">
+                <img
+                  src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+                  alt="Tropical Paradise Escape"
+                  class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <!-- Save badge -->
+                <div class="absolute top-4 left-4">
+                  <span
+                    class="bg-blue-100 text-[#137092] text-xs font-semibold px-3 py-1 rounded-full"
+                  >
+                    Save $500
+                  </span>
+                </div>
+                <!-- Rating -->
+                <div
+                  class="absolute top-4 right-4 bg-black/40 backdrop-blur-sm rounded-full px-3 py-1"
+                >
+                  <div class="flex items-center space-x-1 text-white text-sm">
+                    <iconify-icon
+                      icon="mdi:star"
+                      class="text-yellow-400 text-base"
+                    ></iconify-icon>
+                    <span>4.9</span>
+                    <span>(128)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card content -->
+              <div class="p-5 space-y-4 text-center sm:text-left">
+                <div>
+                  <h3
+                    class="text-xl font-semibold group-hover:text-[#137092] transition-colors"
+                  >
+                    Tropical Paradise Escape
+                  </h3>
+                  <div
+                    class="flex items-center justify-center sm:justify-start text-sm text-gray-500"
+                  >
+                    <iconify-icon
+                      icon="mdi:map-marker"
+                      class="mr-1 text-lg"
+                    ></iconify-icon>
+                    Maldives
+                  </div>
+                </div>
+
+                <div class="flex justify-between text-sm text-gray-500">
+                  <div class="flex items-center">
+                    <iconify-icon
+                      icon="mdi:calendar-clock"
+                      class="mr-1 text-lg"
+                    ></iconify-icon>
+                    7 Days, 6 Nights
+                  </div>
+                  <div class="flex items-center">
+                    <iconify-icon
+                      icon="mdi:account-group"
+                      class="mr-1 text-lg"
+                    ></iconify-icon>
+                    Up to 4 guests
+                  </div>
+                </div>
+
+                <div
+                  class="flex flex-wrap justify-center sm:justify-start gap-2 text-xs"
+                >
+                  <span
+                    class="bg-[#137092] text-white px-2 py-1 rounded-full border border-blue-200"
+                    >All Inclusive</span
+                  >
+                  <span
+                    class="bg-[#137092] text-white px-2 py-1 rounded-full border border-blue-200"
+                    >Beachfront Villa</span
+                  >
+                  <span
+                    class="bg-[#137092] text-white px-2 py-1 rounded-full border border-blue-200"
+                    >Spa Access</span
+                  >
+                </div>
+
+                <div class="flex items-center justify-between">
+                  <div>
+                    <span class="text-2xl font-bold text-[#f97316]"
+                      >$2,499</span
+                    >
+                    <span class="text-sm text-[#f97316] line-through ml-2"
+                      >$2,999</span
+                    >
+                  </div>
+                  <span class="text-xs text-gray-500">per person</span>
+                </div>
+
+                <button
+                  class="w-full bg-[#137092] text-white rounded-lg py-3 hover:opacity-90 transition-all"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+            <!-- Card End -->
+          </div>
+
+          <!-- Button -->
+          <div class="text-center mt-12">
+            <button
+              class="border border-[#137092] text-[#137092] hover:bg-[#137092] hover:text-[#FFF] transition-all rounded-lg px-6 py-2 text-lg animate-pulse"
+            >
+              View All Packages
+            </button>
           </div>
         </div>
-
-        <!-- Button -->
-        <div class="text-center mt-12">
-          <button class="border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-all rounded-lg px-6 py-2 text-lg animate-pulse">
-            View All Packages
-          </button>
-        </div>
-      </div>
-    </section>
+      </section>
       <!-- FEATURES END -->
 
       <!-- SERVICE  -->

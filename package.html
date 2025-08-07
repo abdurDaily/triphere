@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <!-- PRELOADER START -->
+    <div
+      id="preloader"
+      class="fixed inset-0 flex items-center justify-center bg-white z-50 transition-opacity duration-500"
+    >
+      <div
+        class="w-16 h-16 border-4 border-orange-400 border-t-transparent rounded-full animate-spin"
+      ></div>
+    </div>
+
+    <!-- PRELOADER END -->
+
+    <div id="main-content" style="display: none">
+      <!-- NAVIGATION  -->
+      <nav class="bg-white shadow sticky top-0 z-50">
+        <div class="px-6 md:px-10 py-3 flex items-center justify-between">
+          <!-- Logo -->
+          <a href="./index.html" class="text-2xl font-bold text-[#FDB71C]">
+            <img class="w-[180px]" src="./assets/images/logo.webp" alt="Logo" />
+          </a>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-6 ml-auto">
+            <a href="#" class="hover:text-[#FDB71C] text-gray-700">Home</a>
+
+            <!-- Pages Dropdown -->
+            <div class="relative group">
+              <button
+                class="flex items-center gap-1 text-gray-700 hover:text-[#FDB71C]"
+              >
+                Pages <iconify-icon icon="mdi:chevron-down"></iconify-icon>
+              </button>
+              <div
+                class="absolute top-full left-0 mt-2 w-48 bg-white border shadow-md rounded z-50 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-[#FDB71C]/20 text-gray-700"
+                  >About</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-[#FDB71C]/20 text-gray-700"
+                  >Services</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-[#FDB71C]/20 text-gray-700"
+                  >Single Destination</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-[#FDB71C]/20 text-gray-700"
+                  >Testimonials</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-[#FDB71C]/20 text-gray-700"
+                  >Contact</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-[#FDB71C]/20 text-gray-700"
+                  >Blog Post</a
+                >
+              </div>
+            </div>
+
+            <a href="#" class="hover:text-[#FDB71C] text-gray-700">Package</a>
+            <a href="#" class="hover:text-[#FDB71C] text-gray-700"
+              >Destination</a
+            >
+
+            <!-- Buttons -->
+            <a
+              href="#"
+              class="border border-[#FDB71C] text-[#FDB71C] hover:bg-[#FDB71C] hover:text-white px-4 py-2 rounded-full font-medium shadow-sm transition-all duration-300"
+            >
+              Blog
+            </a>
+            <a
+              href="#"
+              class="bg-[#FDB71C] text-white hover:bg-[#e0a513] px-4 py-2 rounded-full font-medium shadow-sm transition-all duration-300"
+            >
+              Contact
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button
+            id="mobileMenuBtn"
+            class="md:hidden flex items-center justify-center h-12 w-12 text-3xl text-gray-700 z-50"
+          >
+            <iconify-icon icon="mdi:menu"></iconify-icon>
+          </button>
+        </div>
+
+        <!-- Overlay -->
+        <div
+          id="overlay"
+          class="fixed inset-0 bg-black bg-opacity-60 hidden z-40 transition-opacity duration-300 ease-in-out"
+        ></div>
+
+        <!-- Sidebar for Mobile -->
+        <div
+          id="mobileSidebar"
+          class="fixed top-0 left-0 h-full w-72 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-50 px-6 py-6 space-y-4 md:hidden"
+        >
+          <button
+            id="closeSidebar"
+            class="text-right w-full text-2xl text-gray-600 mb-4"
+          >
+            <iconify-icon icon="mdi:close"></iconify-icon>
+          </button>
+
+          <!-- Mobile Links -->
+          <a
+            href="#"
+            class="mobile-link block py-2 hover:text-[#FDB71C] text-gray-700"
+            >Home</a
+          >
+
+          <details class="group">
+            <summary
+              class="flex items-center justify-between cursor-pointer py-2 hover:text-[#FDB71C] text-gray-700"
+            >
+              Pages
+              <iconify-icon
+                icon="mdi:chevron-down"
+                class="group-open:rotate-180 transition-transform"
+              ></iconify-icon>
+            </summary>
+            <div class="pl-4 mt-2 space-y-2 text-gray-700">
+              <a href="#" class="mobile-link block hover:text-[#FDB71C] py-3"
+                >About</a
+              >
+              <a href="#" class="mobile-link block hover:text-[#FDB71C] py-3"
+                >Services</a
+              >
+              <a href="#" class="mobile-link block hover:text-[#FDB71C] py-3"
+                >Single Destination</a
+              >
+              <a href="#" class="mobile-link block hover:text-[#FDB71C] py-3"
+                >Testimonials</a
+              >
+              <a href="#" class="mobile-link block hover:text-[#FDB71C] py-3"
+                >Contact</a
+              >
+              <a href="#" class="mobile-link block hover:text-[#FDB71C] py-3"
+                >Blog Post</a
+              >
+            </div>
+          </details>
+
+          <a
+            href="#"
+            class="mobile-link block py-2 hover:text-[#FDB71C] text-gray-700"
+            >Package</a
+          >
+          <a
+            href="#"
+            class="mobile-link block py-2 hover:text-[#FDB71C] text-gray-700"
+            >Destination</a
+          >
+
+          <div class="mt-4 flex flex-wrap gap-3 justify-start">
+            <a
+              href="#"
+              class="mobile-link flex-1 text-center border-2 border-[#FDB71C] text-[#FDB71C] hover:bg-[#FDB71C] hover:text-white px-4 py-2 rounded-full font-medium shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105 min-w-[100px]"
+            >
+              Blog
+            </a>
+            <a
+              href="#"
+              class="mobile-link flex-1 text-center bg-[#FDB71C] text-white hover:bg-[#e0a513] px-4 py-2 rounded-full font-medium shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105 min-w-[100px]"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
+      <!-- NAVIGATION END -->
+
+      <!-- PACKAGE  -->
+      <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Title -->
+          <h2 class="text-4xl font-bold text-center mb-10 text-[#137092]">
+            Tropical Paradise Escape
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Left: Image Slider -->
+            <div>
+              <!-- Main Swiper -->
+              <div
+                class="swiper main-swiper rounded-xl overflow-hidden shadow-lg mb-4"
+              >
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img
+                      src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+                      alt="Tropical Paradise Escape 1"
+                      class="w-full object-cover h-72 sm:h-96"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=800&q=80"
+                      alt="Tropical Paradise Escape 2"
+                      class="w-full object-cover h-72 sm:h-96"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+                      alt="Tropical Paradise Escape 3"
+                      class="w-full object-cover h-72 sm:h-96"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80"
+                      alt="Tropical Paradise Escape 4"
+                      class="w-full object-cover h-72 sm:h-96"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=80"
+                      alt="Tropical Paradise Escape 5"
+                      class="w-full object-cover h-72 sm:h-96"
+                    />
+                  </div>
+                </div>
+                <!-- Navigation buttons -->
+                <div
+                  class="swiper-button-next text-[#137092] hover:text-[#0f5c70]"
+                ></div>
+                <div
+                  class="swiper-button-prev text-[#137092] hover:text-[#0f5c70]"
+                ></div>
+              </div>
+
+              <!-- Thumbnails Swiper -->
+              <div
+                class="swiper thumbs-swiper rounded-xl shadow-inner"
+                style="--swiper-navigation-size: 24px"
+              >
+                <div class="swiper-wrapper">
+                  <div
+                    class="swiper-slide cursor-pointer opacity-70 hover:opacity-100 border-2 border-transparent hover:border-[#137092] rounded-lg overflow-hidden w-24 h-16 flex-shrink-0"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=60"
+                      alt="Thumb 1"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div
+                    class="swiper-slide cursor-pointer opacity-70 hover:opacity-100 border-2 border-transparent hover:border-[#137092] rounded-lg overflow-hidden w-24 h-16 flex-shrink-0"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=200&q=60"
+                      alt="Thumb 2"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div
+                    class="swiper-slide cursor-pointer opacity-70 hover:opacity-100 border-2 border-transparent hover:border-[#137092] rounded-lg overflow-hidden w-24 h-16 flex-shrink-0"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=200&q=60"
+                      alt="Thumb 3"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div
+                    class="swiper-slide cursor-pointer opacity-70 hover:opacity-100 border-2 border-transparent hover:border-[#137092] rounded-lg overflow-hidden w-24 h-16 flex-shrink-0"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=200&q=60"
+                      alt="Thumb 4"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div
+                    class="swiper-slide cursor-pointer opacity-70 hover:opacity-100 border-2 border-transparent hover:border-[#137092] rounded-lg overflow-hidden w-24 h-16 flex-shrink-0"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=200&q=60"
+                      alt="Thumb 5"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <!-- Add more thumbs as needed -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Package Details -->
+            <div class="space-y-6">
+              <div>
+                <h3 class="text-2xl font-semibold text-[#137092]">
+                  Tropical Paradise Escape
+                </h3>
+                <p class="flex items-center text-gray-600 mt-1">
+                  <span
+                    class="iconify mr-1 text-xl text-[#137092]"
+                    data-icon="mdi:map-marker"
+                  ></span>
+                  Maldives
+                </p>
+              </div>
+
+              <div class="flex flex-wrap gap-4 text-gray-600 text-sm">
+                <div class="flex items-center">
+                  <span
+                    class="iconify mr-1 text-lg"
+                    data-icon="mdi:calendar-clock"
+                  ></span>
+                  7 Days, 6 Nights
+                </div>
+                <div class="flex items-center">
+                  <span
+                    class="iconify mr-1 text-lg"
+                    data-icon="mdi:account-group"
+                  ></span>
+                  Up to 4 guests
+                </div>
+                <div class="flex items-center">
+                  <span
+                    class="iconify mr-1 text-lg"
+                    data-icon="mdi:star"
+                  ></span>
+                  4.9 (128 Reviews)
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-2 text-xs">
+                <span
+                  class="bg-[#137092] text-white px-3 py-1 rounded-full border border-blue-200"
+                  >All Inclusive</span
+                >
+                <span
+                  class="bg-[#137092] text-white px-3 py-1 rounded-full border border-blue-200"
+                  >Beachfront Villa</span
+                >
+                <span
+                  class="bg-[#137092] text-white px-3 py-1 rounded-full border border-blue-200"
+                  >Spa Access</span
+                >
+              </div>
+
+              <div>
+                <h4 class="text-lg font-semibold mb-2 text-[#137092]">
+                  About This Package
+                </h4>
+                <p class="text-gray-700 leading-relaxed">
+                  Escape to a tropical paradise where turquoise waters meet
+                  white sandy beaches. Enjoy luxurious accommodations, gourmet
+                  dining, and exclusive spa treatments in the Maldives.
+                </p>
+              </div>
+
+              <div class="flex items-center justify-between border-t pt-4">
+                <div>
+                  <span class="text-3xl font-bold text-[#FDB71C]">$2,499</span>
+                  <span class="text-sm text-[#FDB71C] line-through ml-3"
+                    >$2,999</span
+                  >
+                </div>
+                <span class="text-sm text-gray-500">per person</span>
+              </div>
+
+              <a
+                href="./package.html"
+                class="block w-full text-center bg-gradient-to-r from-[#137092] to-[#0f5c70] text-white font-semibold py-3 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300"
+                >Book Now</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Swiper JS -->
+      <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script> -->
+
+      <!-- PACKAGE END -->
+
+      <!-- FOOTER START -->
+      <footer
+        class="bg-gradient-to-br from-[#FFF8E1] to-white backdrop-blur-md"
+      >
+        <div
+          class="container mx-auto px-4 py-16 animate-fade-in-up duration-700"
+        >
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+            <!-- Company Info -->
+            <div class="space-y-4 animate-fade-in-up delay-100">
+              <a href="#" class="flex items-center space-x-2">
+                <img
+                  class="w-48 transition-transform duration-300 hover:scale-105"
+                  src="./assets/images/logo.webp"
+                  alt="TripsHere Logo"
+                />
+              </a>
+              <p class="text-gray-700 leading-relaxed">
+                Your trusted travel partner for unforgettable journeys around
+                the world. Creating memories that last a lifetime.
+              </p>
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow hover:bg-[#FDE4A9] transition hover:scale-110"
+                >
+                  <iconify-icon
+                    icon="mdi:facebook"
+                    class="text-xl text-[#FDB71C]"
+                  ></iconify-icon>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow hover:bg-[#FDE4A9] transition hover:scale-110"
+                >
+                  <iconify-icon
+                    icon="mdi:twitter"
+                    class="text-xl text-[#FDB71C]"
+                  ></iconify-icon>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow hover:bg-[#FDE4A9] transition hover:scale-110"
+                >
+                  <iconify-icon
+                    icon="mdi:instagram"
+                    class="text-xl text-[#FDB71C]"
+                  ></iconify-icon>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow hover:bg-[#FDE4A9] transition hover:scale-110"
+                >
+                  <iconify-icon
+                    icon="mdi:youtube"
+                    class="text-xl text-[#FDB71C]"
+                  ></iconify-icon>
+                </a>
+              </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="space-y-4 animate-fade-in-up delay-200">
+              <h3 class="text-xl font-semibold text-[#FDB71C]">Quick Links</h3>
+              <ul class="space-y-2 text-gray-700">
+                <li>
+                  <a
+                    href="#"
+                    class="hover:text-[#FDB71C] transition duration-300 hover:translate-x-1 inline-block"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="hover:text-[#FDB71C] transition duration-300 hover:translate-x-1 inline-block"
+                    >Packages</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="hover:text-[#FDB71C] transition duration-300 hover:translate-x-1 inline-block"
+                    >Visa Process</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="hover:text-[#FDB71C] transition duration-300 hover:translate-x-1 inline-block"
+                    >Air Tickets</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="hover:text-[#FDB71C] transition duration-300 hover:translate-x-1 inline-block"
+                    >Blog</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="hover:text-[#FDB71C] transition duration-300 hover:translate-x-1 inline-block"
+                    >Gallery</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Services -->
+            <div class="space-y-4 animate-fade-in-up delay-300">
+              <h3 class="text-xl font-semibold text-[#FDB71C]">Services</h3>
+              <ul class="space-y-2 text-gray-700">
+                <li class="hover:translate-x-1 transition">Flight Booking</li>
+                <li class="hover:translate-x-1 transition">
+                  Hotel Reservation
+                </li>
+                <li class="hover:translate-x-1 transition">Travel Insurance</li>
+                <li class="hover:translate-x-1 transition">Visa Assistance</li>
+                <li class="hover:translate-x-1 transition">Car Rental</li>
+                <li class="hover:translate-x-1 transition">Tour Guides</li>
+              </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="space-y-4 animate-fade-in-up delay-500">
+              <h3 class="text-xl font-semibold text-[#FDB71C]">Stay Updated</h3>
+              <p class="text-gray-700">
+                Subscribe to our newsletter for the latest travel deals and
+                destinations.
+              </p>
+              <div class="space-y-2">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FDB71C] transition"
+                />
+                <button
+                  class="w-full bg-[#FDB71C] text-white py-3 rounded-lg hover:bg-[#E6A716] transition hover:scale-105"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Info -->
+          <div
+            class="border-t border-[#FDE4A9] mt-12 pt-8 animate-fade-in-up delay-700"
+          >
+            <div
+              class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center md:text-left text-gray-700"
+            >
+              <div
+                class="flex items-center justify-center md:justify-start space-x-2"
+              >
+                <iconify-icon
+                  icon="mdi:email"
+                  class="text-[#FDB71C] text-xl animate-pulse"
+                ></iconify-icon>
+                <span>contact@tripshere.com</span>
+              </div>
+              <div
+                class="flex items-center justify-center md:justify-start space-x-2"
+              >
+                <iconify-icon
+                  icon="mdi:phone"
+                  class="text-[#FDB71C] text-xl animate-pulse"
+                ></iconify-icon>
+                <span>+1 (555) 123-4567</span>
+              </div>
+              <div
+                class="flex items-center justify-center md:justify-start space-x-2"
+              >
+                <iconify-icon
+                  icon="mdi:map-marker"
+                  class="text-[#FDB71C] text-xl animate-pulse"
+                ></iconify-icon>
+                <span>123 Travel Street, City</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Copyright -->
+          <div
+            class="border-t border-[#FDE4A9] mt-8 pt-6 text-center text-sm text-gray-600 animate-fade-in-up delay-800"
+          >
+            © 2024 TripsHere. All rights reserved. |
+            <a href="#" class="hover:text-[#FDB71C]">Privacy Policy</a> |
+            <a href="#" class="hover:text-[#FDB71C]">Terms of Service</a>
+          </div>
+        </div>
+      </footer>
+
+      <!-- FOOTER END -->
+
+      <!-- WHATSAPP -->
+      <div class="whatsapp fixed bottom-8 right-4 z-50 animate-bounce">
+        <a href="#">
+          <img
+            class="w-[50px] drop-shadow-lg transition-transform duration-300 hover:scale-110"
+            src="./assets/images/whatsapp.png"
+            alt="WhatsApp"
+          />
+        </a>
+      </div>
+
+      <!-- WHATSAPP END -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- Tailwind & Iconify CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>

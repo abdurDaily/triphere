@@ -69,3 +69,21 @@ body {
       transform: translateY(0);
     }
   }
+
+
+
+   /* Keep swiper thumbnails in one row, horizontally scrollable if overflow */
+    .thumbs-swiper .swiper-wrapper {
+      flex-wrap: nowrap !important;
+    }
+    .thumbs-swiper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+    }
+    /* Hide scrollbar in Firefox */
+    .thumbs-swiper {
+      scrollbar-width: none;
+    }
+    .thumbs-swiper::-webkit-scrollbar {
+      display: none;
+    }

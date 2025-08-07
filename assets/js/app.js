@@ -41,3 +41,62 @@ window.addEventListener("load", () => {
 
 /**PRELOADER END */
 
+
+
+// Initialize Swiper
+  const swiper = new Swiper(".featured-packages-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      640: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    },
+  });
+
+  // Modal functions
+  function openPackageDetails() {
+    document.getElementById("packageModal").classList.remove("hidden");
+  }
+
+  function closePackageDetails() {
+    document.getElementById("packageModal").classList.add("hidden");
+  }
+
+  // Close modal on outside click
+  window.addEventListener("click", function (e) {
+    const modal = document.getElementById("packageModal");
+    if (!modal.classList.contains("hidden") && !modal.firstElementChild.contains(e.target)) {
+      closePackageDetails();
+    }
+  });
+
+
+
+    const thumbsSwiper = new Swiper(".thumbs-swiper", {
+    spaceBetween: 10,
+    slidesPerView: "auto", // allows responsive scrolling thumbs
+    freeMode: true,
+    watchSlidesProgress: true,
+    watchSlidesVisibility: true,
+  });
+
+  const mainSwiper = new Swiper(".main-swiper", {
+    spaceBetween: 10,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    thumbs: {
+      swiper: thumbsSwiper,
+    },
+  });

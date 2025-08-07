@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/style.css" />
@@ -26,7 +31,7 @@
       <nav class="bg-white shadow sticky top-0 z-50">
         <div class="px-6 md:px-10 py-3 flex items-center justify-between">
           <!-- Logo -->
-          <a href="#" class="text-2xl font-bold text-[#FDB71C]">
+          <a href="./index.html" class="text-2xl font-bold text-[#FDB71C]">
             <img class="w-[180px]" src="./assets/images/logo.webp" alt="Logo" />
           </a>
 
@@ -190,227 +195,13 @@
           </div>
         </div>
       </nav>
-
       <!-- NAVIGATION END -->
 
-      <!-- HERO -->
-      <section class="relative bg-white overflow-hidden">
-        <!-- Wide background wrapper -->
-        <div class="absolute inset-0 z-0 bg-white"></div>
-
-        <!-- Full-width gradient background with image -->
-        <div class="relative z-10 px-4 py-5">
-          <div
-            class="relative mx-auto max-w-[1600px] px-6 py-16 rounded-[2rem] overflow-hidden bg-gradient-to-br from-blue-900 via-indigo-800 to-purple-800"
-          >
-            <!-- Background image wider -->
-            <div
-              class="absolute inset-0 opacity-20 rounded-[2rem]"
-              style="
-                background-image: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
-                background-size: cover;
-                background-position: center;
-              "
-            ></div>
-
-            <!-- Plane animation -->
-            <svg
-              class="absolute top-12 left-0 w-full h-20 animate-flight opacity-60 z-0"
-              viewBox="0 0 100 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M0 10 Q 25 0, 50 10 T 100 10"
-                stroke="white"
-                stroke-width="0.5"
-                fill="none"
-              />
-              <circle r="0.7" fill="white">
-                <animateMotion
-                  repeatCount="indefinite"
-                  dur="4s"
-                  path="M0 10 Q 25 0, 50 10 T 100 10"
-                />
-              </circle>
-            </svg>
-
-            <!-- Inner Content: max-w-7xl -->
-            <div class="relative z-10 max-w-7xl mx-auto text-center">
-              <h1
-                class="text-4xl md:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in"
-              >
-                Discover Your Next
-                <span class="block text-[#FDB71C]">Adventure</span>
-              </h1>
-              <p
-                class="text-xl md:text-lg text-white/90 mb-8 max-w-3xl mx-auto animate-fade-in"
-              >
-                Experience the world like never before with our curated travel
-                packages, seamless visa processing, and unforgettable journeys.
-              </p>
-
-              <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                <!-- Explore Packages -->
-                <button
-                  class="relative inline-flex items-center justify-center px-7 py-3 text-base font-semibold text-white bg-[#FDB71C] rounded-full transition-all duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 focus:outline-none"
-                >
-                  <span class="relative z-10">Explore Packages</span>
-                  <span
-                    class="absolute inset-0 rounded-full bg-orange-600 opacity-0 group-hover:opacity-10 transition duration-300"
-                  ></span>
-                </button>
-
-                <!-- Watch Our Story -->
-                <button
-                  class="relative inline-flex items-center justify-center px-7 py-3 text-base font-semibold border border-white text-white rounded-full transition-all duration-300 ease-in-out hover:bg-white hover:text-gray-900 hover:shadow-md hover:-translate-y-1 focus:outline-none"
-                >
-                  <span class="relative z-10">Watch Our Story</span>
-                  <span
-                    class="absolute inset-0 rounded-full bg-white opacity-0 hover:opacity-10 transition duration-300"
-                  ></span>
-                </button>
-              </div>
-
-              <!-- Search Card -->
-              <div
-                class="max-w-4xl mx-auto p-6 bg-white/95 backdrop-blur-sm rounded-xl shadow-xl animate-fade-in"
-              >
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                  <!-- Destination -->
-                  <div
-                    class="flex items-center space-x-3 p-3 rounded-lg bg-gray-100"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5 text-orange-500"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M17.657 16.657L13.414 12.414M9.586 8.586L6.343 5.343a8 8 0 1111.314 11.314z"
-                      />
-                    </svg>
-                    <div class="flex-1">
-                      <label class="block text-sm font-medium text-gray-600"
-                        >Destination</label
-                      >
-                      <input
-                        type="text"
-                        placeholder="Where to?"
-                        class="w-full bg-transparent border-none outline-none text-gray-800 placeholder:text-gray-400"
-                      />
-                    </div>
-                  </div>
-
-                  <!-- Check-in -->
-                  <div
-                    class="flex items-center space-x-3 p-3 rounded-lg bg-gray-100"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5 text-orange-500"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M8 7V3m8 4V3m-9 8h10m-10 4h6m2 5a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <div class="flex-1">
-                      <label class="block text-sm font-medium text-gray-600"
-                        >Check-in</label
-                      >
-                      <input
-                        type="date"
-                        class="w-full bg-transparent border-none outline-none text-gray-800"
-                      />
-                    </div>
-                  </div>
-
-                  <!-- Guests -->
-                  <div
-                    class="flex items-center space-x-3 p-3 rounded-lg bg-gray-100"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5 text-orange-500"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M17 20h5v-2a4 4 0 00-4-4h-1M9 20H4v-2a4 4 0 014-4h1m5-4a4 4 0 11-8 0 4 4 0 018 0z"
-                      />
-                    </svg>
-                    <div class="flex-1">
-                      <label class="block text-sm font-medium text-gray-600"
-                        >Guests</label
-                      >
-                      <select
-                        class="w-full bg-transparent border-none outline-none text-gray-800"
-                      >
-                        <option>2 Adults</option>
-                        <option>1 Adult</option>
-                        <option>3 Adults</option>
-                        <option>4+ Adults</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <!-- Search Button -->
-                  <button
-                    class="flex items-center justify-center h-full px-4 py-3 bg-gradient-to-r from-[#FDB71C] to-yellow-400 text-white rounded-lg shadow-md hover:opacity-90 transition duration-300"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5 mr-2"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                      />
-                    </svg>
-                    Search
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- HERO END -->
-
-      <!-- FEATURES -->
-      <section class="py-20 bg-gradient-to-b from-white to-blue-50">
+      <!-- PACKAGE  -->
+     <section class="py-20 bg-gradient-to-b from-white to-blue-50">
         <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
           <!-- Heading -->
-          <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold mb-4">
-              Featured Travel <span class="text-[#FDB71C]">Packages</span>
-            </h2>
-            <p class="text-sm text-gray-600 max-w-2xl mx-auto">
-              Discover our most popular destinations with carefully crafted
-              itineraries designed to create unforgettable memories.
-            </p>
-          </div>
+         
 
           <!-- Grid -->
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -540,144 +331,10 @@
             <!-- Just duplicate the above card block two more times -->
           </div>
 
-          <!-- Button -->
-          <div class="text-center mt-12">
-            <a href="./view_all_packages.html"
-              class="border border-[#FDB71C] text-[#FDB71C] hover:bg-[#FDB71C] hover:text-white transition-all rounded-lg px-6 py-2 text-lg"
-            >
-              View All Packages
-            </a>
-          </div>
+          
         </div>
       </section>
-      <!-- FEATURES END -->
-
-      <!-- SERVICE  -->
-      <section class="py-12 md:py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-          <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Our Travel <span class="text-[#FDB71C]">Services</span>
-            </h2>
-            <p class="text-sm text-gray-600 max-w-2xl mx-auto">
-              From flight bookings to visa processing, we provide comprehensive
-              travel solutions to make your journey seamless and memorable.
-            </p>
-          </div>
-
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
-          >
-            <!-- CARD -->
-            <div
-              class="group bg-white rounded-xl shadow-lg px-6 py-8 sm:px-8 sm:py-10 max-w-sm mx-auto hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-center"
-            >
-              <div
-                class="mx-auto mb-4 p-4 rounded-full bg-gradient-to-tr from-[#e6b733] via-[#f2c846] to-[#f9d96e] w-fit"
-              >
-                <svg
-                  class="w-7 h-7 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M2.5 19.5l19-7-19-7v5l13 2-13 2v5z"
-                  ></path>
-                </svg>
-              </div>
-              <h3
-                class="text-xl font-semibold group-hover:text-[#c28f00] transition-colors"
-              >
-                Flight Booking
-              </h3>
-              <p class="text-gray-500 mt-2 text-sm">
-                Best deals on domestic and international flights with flexible
-                booking options.
-              </p>
-              <ul class="mt-4 space-y-2 text-gray-500 text-sm text-center">
-                <li class="flex items-center justify-center">
-                  <span class="w-2 h-2 bg-[#FDB71C] rounded-full mr-3"></span>
-                  24/7 Support
-                </li>
-                <li class="flex items-center justify-center">
-                  <span class="w-2 h-2 bg-[#FDB71C] rounded-full mr-3"></span>
-                  Price Alerts
-                </li>
-                <li class="flex items-center justify-center">
-                  <span class="w-2 h-2 bg-[#FDB71C] rounded-full mr-3"></span>
-                  Free Cancellation
-                </li>
-              </ul>
-              <button
-                class="mt-6 w-full border border-[#FDB71C] text-[#FDB71C] hover:bg-[#FDB71C] hover:text-white rounded-lg py-3 transition-all"
-              >
-                Learn More
-              </button>
-            </div>
-
-            <!-- Repeat similar changes for other cards -->
-
-            <!-- Example for second card -->
-            <div
-              class="group bg-white rounded-xl shadow-lg px-6 py-8 sm:px-8 sm:py-10 max-w-sm mx-auto hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 text-center"
-            >
-              <div
-                class="mx-auto mb-4 p-4 rounded-full bg-gradient-to-tr from-[#e6b733] via-[#f2c846] to-[#f9d96e] w-fit"
-              >
-                <svg
-                  class="w-7 h-7 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M9 12h6m-6 4h6m2 4H7a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v12a2 2 0 01-2 2z"
-                  ></path>
-                </svg>
-              </div>
-              <h3
-                class="text-xl font-semibold group-hover:text-[#c28f00] transition-colors"
-              >
-                Visa Processing
-              </h3>
-              <p class="text-gray-500 mt-2 text-sm">
-                Best deals on domestic and international flights with flexible
-                booking options.
-              </p>
-              <ul class="mt-4 space-y-2 text-gray-500 text-sm text-center">
-                <li class="flex items-center justify-center">
-                  <span class="w-2 h-2 bg-[#FDB71C] rounded-full mr-3"></span>
-                  Document Check
-                </li>
-                <li class="flex items-center justify-center">
-                  <span class="w-2 h-2 bg-[#FDB71C] rounded-full mr-3"></span>
-                  Fast Processing
-                </li>
-                <li class="flex items-center justify-center">
-                  <span class="w-2 h-2 bg-[#FDB71C] rounded-full mr-3"></span>
-                  Expert Consultation
-                </li>
-              </ul>
-              <button
-                class="mt-6 w-full border border-[#FDB71C] text-[#FDB71C] hover:bg-[#FDB71C] hover:text-white rounded-lg py-3 transition-all"
-              >
-                Learn More
-              </button>
-            </div>
-
-            <!-- Continue similarly for the rest cards -->
-          </div>
-        </div>
-      </section>
-
-      <!-- SERVICE END -->
+      <!-- PACKAGE END -->
 
       <!-- FOOTER START -->
       <footer
@@ -689,7 +346,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             <!-- Company Info -->
             <div class="space-y-4 animate-fade-in-up delay-100">
-              <a href="./index.html" class="flex items-center space-x-2">
+              <a href="#" class="flex items-center space-x-2">
                 <img
                   class="w-48 transition-transform duration-300 hover:scale-105"
                   src="./assets/images/logo.webp"
@@ -889,6 +546,8 @@
 
       <!-- WHATSAPP END -->
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
     <!-- Tailwind & Iconify CDN -->
     <script src="https://cdn.tailwindcss.com"></script>

@@ -4,11 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
-
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/style.css" />
@@ -195,214 +190,207 @@
           </div>
         </div>
       </nav>
-      <!-- NAVIGATION END -->
+      <!-- END NAV -->
 
-      <!-- PACKAGE  -->
-      <section class="py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- CHECKOUT -->
+      <section class="py-12 bg-gray-50">
+        <div
+          class="max-w-3xl mx-auto px-6 sm:px-10 bg-white rounded-2xl shadow-lg p-10"
+        >
           <!-- Title -->
-          <h2 class="text-4xl font-bold text-center mb-10 text-[#137092]">
-            Tropical Paradise Escape
+          <h2 class="text-4xl font-extrabold text-center text-[#137092] mb-8">
+            Complete Your Booking
           </h2>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <!-- Left: Image Slider -->
+          <!-- Booking Form -->
+          <form class="space-y-8" id="bookingForm">
+            <!-- Personal Info -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  for="name"
+                  >Full Name *</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  required
+                  placeholder="John Doe"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#137092] focus:border-transparent transition"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  for="email"
+                  >Email Address *</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  required
+                  placeholder="email@example.com"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#137092] focus:border-transparent transition"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  for="phone"
+                  >Phone Number *</label
+                >
+                <input
+                  type="tel"
+                  id="phone"
+                  required
+                  placeholder="+880 1X-XXXX-XXXX"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#137092] focus:border-transparent transition"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  for="date"
+                  >Travel Date *</label
+                >
+                <input
+                  type="date"
+                  id="date"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#137092] focus:border-transparent transition"
+                />
+              </div>
+            </div>
+
+            <!-- Number of Travelers -->
             <div>
-              <!-- Main Swiper -->
-              <div
-                class="swiper main-swiper rounded-xl overflow-hidden shadow-lg mb-4"
+              <label
+                class="block text-sm font-medium text-gray-700 mb-1"
+                for="travelers"
+                >Number of Travelers *</label
               >
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <img
-                      src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
-                      alt="Tropical Paradise Escape 1"
-                      class="w-full object-cover h-72 sm:h-96"
-                    />
-                  </div>
-                  <div class="swiper-slide">
-                    <img
-                      src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=800&q=80"
-                      alt="Tropical Paradise Escape 2"
-                      class="w-full object-cover h-72 sm:h-96"
-                    />
-                  </div>
-                  <div class="swiper-slide">
-                    <img
-                      src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
-                      alt="Tropical Paradise Escape 3"
-                      class="w-full object-cover h-72 sm:h-96"
-                    />
-                  </div>
-                  <div class="swiper-slide">
-                    <img
-                      src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80"
-                      alt="Tropical Paradise Escape 4"
-                      class="w-full object-cover h-72 sm:h-96"
-                    />
-                  </div>
-                  <div class="swiper-slide">
-                    <img
-                      src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=80"
-                      alt="Tropical Paradise Escape 5"
-                      class="w-full object-cover h-72 sm:h-96"
-                    />
-                  </div>
-                </div>
-                <!-- Navigation buttons -->
-                <div
-                  class="swiper-button-next text-[#137092] hover:text-[#0f5c70]"
-                ></div>
-                <div
-                  class="swiper-button-prev text-[#137092] hover:text-[#0f5c70]"
-                ></div>
-              </div>
+              <input
+                type="number"
+                id="travelers"
+                min="1"
+                value="1"
+                required
+                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#137092] focus:border-transparent transition"
+              />
+            </div>
 
-              <!-- Thumbnails Swiper -->
-              <div
-                class="swiper thumbs-swiper rounded-xl shadow-inner"
-                style="--swiper-navigation-size: 24px"
+            <!-- Notes -->
+            <div>
+              <label
+                class="block text-sm font-medium text-gray-700 mb-1"
+                for="notes"
+                >Notes (Optional)</label
               >
-                <div class="swiper-wrapper">
-                  <div
-                    class="swiper-slide cursor-pointer opacity-70 hover:opacity-100 border-2 border-transparent hover:border-[#137092] rounded-lg overflow-hidden w-24 h-16 flex-shrink-0"
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=60"
-                      alt="Thumb 1"
-                      class="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div
-                    class="swiper-slide cursor-pointer opacity-70 hover:opacity-100 border-2 border-transparent hover:border-[#137092] rounded-lg overflow-hidden w-24 h-16 flex-shrink-0"
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1493558103817-58b2924bce98?auto=format&fit=crop&w=200&q=60"
-                      alt="Thumb 2"
-                      class="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div
-                    class="swiper-slide cursor-pointer opacity-70 hover:opacity-100 border-2 border-transparent hover:border-[#137092] rounded-lg overflow-hidden w-24 h-16 flex-shrink-0"
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=200&q=60"
-                      alt="Thumb 3"
-                      class="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div
-                    class="swiper-slide cursor-pointer opacity-70 hover:opacity-100 border-2 border-transparent hover:border-[#137092] rounded-lg overflow-hidden w-24 h-16 flex-shrink-0"
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=200&q=60"
-                      alt="Thumb 4"
-                      class="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div
-                    class="swiper-slide cursor-pointer opacity-70 hover:opacity-100 border-2 border-transparent hover:border-[#137092] rounded-lg overflow-hidden w-24 h-16 flex-shrink-0"
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=200&q=60"
-                      alt="Thumb 5"
-                      class="w-full h-full object-cover"
-                    />
-                  </div>
-                  <!-- Add more thumbs as needed -->
+              <textarea
+                id="notes"
+                rows="3"
+                placeholder="Any special requests?"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#137092] focus:border-transparent transition"
+              ></textarea>
+            </div>
+
+            <!-- Promo Code -->
+            <div>
+              <label
+                class="block text-sm font-medium text-gray-700 mb-1"
+                for="promoCode"
+                >Promo Code</label
+              >
+              <div class="flex space-x-3">
+                <input
+                  type="text"
+                  id="promoCode"
+                  placeholder="Enter promo code"
+                  class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#137092] focus:border-transparent transition"
+                />
+                <button
+                  type="button"
+                  id="applyPromo"
+                  class="px-5 py-3 bg-[#137092] text-white rounded-lg hover:bg-[#0f5c70] transition"
+                >
+                  Apply
+                </button>
+              </div>
+              <p id="promoMessage" class="text-sm mt-2"></p>
+            </div>
+
+            <!-- Payment Summary -->
+            <div class="border-t pt-6">
+              <h3 class="text-2xl font-semibold text-gray-800 mb-4">
+                Payment Summary
+              </h3>
+              <div class="space-y-3 text-gray-600 text-base">
+                <div class="flex justify-between">
+                  <span>Base Price per Traveler</span>
+                  <span>$<span id="unitPrice">2,499</span></span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Total Travelers</span>
+                  <span id="totalTravelersText">1</span>
+                </div>
+                <div
+                  class="flex justify-between"
+                  id="discountRow"
+                  style="display: none"
+                >
+                  <span>Discount (20%)</span>
+                  <span>-$<span id="discountAmount">0</span></span>
+                </div>
+                <div
+                  class="flex justify-between font-semibold text-[#FDB71C] text-xl border-t pt-3"
+                >
+                  <span>Total Price</span>
+                  <span>$<span id="totalPrice">2,499</span></span>
                 </div>
               </div>
             </div>
 
-            <!-- Right: Package Details -->
-            <div class="space-y-6">
-              <div>
-                <h3 class="text-2xl font-semibold text-[#137092]">
-                  Tropical Paradise Escape
-                </h3>
-                <p class="flex items-center text-gray-600 mt-1">
-                  <span
-                    class="iconify mr-1 text-xl text-[#137092]"
-                    data-icon="mdi:map-marker"
-                  ></span>
-                  Maldives
-                </p>
-              </div>
-
-              <div class="flex flex-wrap gap-4 text-gray-600 text-sm">
-                <div class="flex items-center">
-                  <span
-                    class="iconify mr-1 text-lg"
-                    data-icon="mdi:calendar-clock"
-                  ></span>
-                  7 Days, 6 Nights
-                </div>
-                <div class="flex items-center">
-                  <span
-                    class="iconify mr-1 text-lg"
-                    data-icon="mdi:account-group"
-                  ></span>
-                  Up to 4 guests
-                </div>
-                <div class="flex items-center">
-                  <span
-                    class="iconify mr-1 text-lg"
-                    data-icon="mdi:star"
-                  ></span>
-                  4.9 (128 Reviews)
-                </div>
-              </div>
-
-              <div class="flex flex-wrap gap-2 text-xs">
-                <span
-                  class="bg-[#137092] text-white px-3 py-1 rounded-full border border-blue-200"
-                  >All Inclusive</span
+            <!-- Terms -->
+            <div class="flex items-start space-x-2 text-sm text-gray-600">
+              <input
+                id="agree"
+                type="checkbox"
+                required
+                class="mt-1 text-[#137092] focus:ring-[#137092]"
+              />
+              <label for="agree">
+                I agree to the
+                <a
+                  href="./terms.html"
+                  class="text-[#137092] underline hover:text-[#0f5c70]"
+                  >Terms & Conditions</a
                 >
-                <span
-                  class="bg-[#137092] text-white px-3 py-1 rounded-full border border-blue-200"
-                  >Beachfront Villa</span
-                >
-                <span
-                  class="bg-[#137092] text-white px-3 py-1 rounded-full border border-blue-200"
-                  >Spa Access</span
-                >
-              </div>
-
-              <div>
-                <h4 class="text-lg font-semibold mb-2 text-[#137092]">
-                  About This Package
-                </h4>
-                <p class="text-gray-700 leading-relaxed">
-                  Escape to a tropical paradise where turquoise waters meet
-                  white sandy beaches. Enjoy luxurious accommodations, gourmet
-                  dining, and exclusive spa treatments in the Maldives.
-                </p>
-              </div>
-
-              <div class="flex items-center justify-between border-t pt-4">
-                <div>
-                  <span class="text-3xl font-bold text-[#FDB71C]">$2,499</span>
-                  <span class="text-sm text-[#FDB71C] line-through ml-3"
-                    >$2,999</span
-                  >
-                </div>
-                <span class="text-sm text-gray-500">per person</span>
-              </div>
-
-              <a
-                href="./checkout.html"
-                class="block w-full text-center bg-gradient-to-r from-[#137092] to-[#0f5c70] text-white font-semibold py-3 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300"
-                >Book Now</a
-              >
+                and
+                <a
+                  href="./refund.html"
+                  class="text-[#137092] underline hover:text-[#0f5c70]"
+                  >Refund Policy</a
+                >.
+              </label>
             </div>
-          </div>
+
+            <!-- Submit Button -->
+            <button
+              type="submit"
+              class="w-full bg-gradient-to-r from-[#137092] to-[#0f5c70] text-white font-semibold py-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-300 text-lg"
+            >
+              Proceed to Payment
+            </button>
+          </form>
         </div>
       </section>
 
-      <!-- Swiper JS -->
-      <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script> -->
+      <!-- Script to Update Total Price -->
+     
 
-      <!-- PACKAGE END -->
+      <!-- CHECKOUT END -->
 
       <!-- FOOTER START -->
       <footer
@@ -615,13 +603,70 @@
       <!-- WHATSAPP END -->
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-
     <!-- Tailwind & Iconify CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+     <script>
+        const travelersInput = document.getElementById("travelers");
+        const totalTravelersText =
+          document.getElementById("totalTravelersText");
+        const totalPrice = document.getElementById("totalPrice");
+        const discountRow = document.getElementById("discountRow");
+        const discountAmountText = document.getElementById("discountAmount");
+        const promoCodeInput = document.getElementById("promoCode");
+        const promoMessage = document.getElementById("promoMessage");
+        const applyPromoBtn = document.getElementById("applyPromo");
+
+        const unitPrice = 2499;
+        const validPromoCode = "1234";
+        let discountRate = 0;
+
+        function updatePrice() {
+          let count = parseInt(travelersInput.value);
+
+          if (isNaN(count) || count < 1) {
+            travelersInput.value = "";
+            totalTravelersText.textContent = "0";
+            totalPrice.textContent = "0";
+            discountRow.style.display = "none";
+            return;
+          }
+
+          const totalBeforeDiscount = count * unitPrice;
+          const discountAmount = totalBeforeDiscount * discountRate;
+          const finalTotal = totalBeforeDiscount - discountAmount;
+
+          totalTravelersText.textContent = count;
+          discountAmountText.textContent = discountAmount.toLocaleString();
+          totalPrice.textContent = finalTotal.toLocaleString();
+
+          if (discountRate > 0) {
+            discountRow.style.display = "flex";
+          } else {
+            discountRow.style.display = "none";
+          }
+        }
+
+        applyPromoBtn.addEventListener("click", () => {
+          if (promoCodeInput.value.trim() === validPromoCode) {
+            discountRate = 0.2;
+            promoMessage.textContent = "Promo code applied! You get 20% off.";
+            promoMessage.className = "text-green-600 text-sm mt-2";
+          } else {
+            discountRate = 0;
+            promoMessage.textContent = "Invalid promo code.";
+            promoMessage.className = "text-red-600 text-sm mt-2";
+          }
+          updatePrice();
+        });
+
+        travelersInput.addEventListener("input", updatePrice);
+        document.addEventListener("DOMContentLoaded", updatePrice);
+      </script>
+
     <script src="./assets/js/app.js"></script>
   </body>
 </html>

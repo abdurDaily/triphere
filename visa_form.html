@@ -3,15 +3,85 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Malaysia Visa - Tripnest Clone</title>
+    <title>Visa Application Form</title>
+
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- FilePond styles -->
     <link
+      href="https://unpkg.com/filepond/dist/filepond.min.css"
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link
+      href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      .filepond--credits {
+        display: none;
+      }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px #fbbf24; /* yellow ring */
+      }
+      input,
+      select,
+      textarea {
+        box-shadow: inset 0 1px 3px rgb(0 0 0 / 0.1);
+        transition: box-shadow 0.3s ease;
+      }
+
+      .btn-outline-yellow {
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 6px rgb(251 191 36 / 0.4);
+      }
+      .btn-outline-yellow:hover {
+        box-shadow: 0 6px 12px rgb(251 191 36 / 0.6);
+      }
+      .btn-yellow {
+        background-color: #fbbf24;
+        color: #1f2937;
+        font-weight: 600;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 8px rgb(251 191 36 / 0.5);
+      }
+      .btn-yellow:hover {
+        background-color: #f59e0b;
+        color: white;
+        box-shadow: 0 6px 14px rgb(245 158 11 / 0.7);
+      }
+      .btn-outline-yellow {
+        background-color: transparent;
+        border: 2px solid #fbbf24;
+        color: #92400e;
+        font-weight: 600;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        border-radius: 0.5rem;
+        box-shadow: none;
+      }
+      .btn-outline-yellow:hover {
+        background-color: #fbbf24;
+        color: #1f2937;
+        box-shadow: 0 6px 12px rgb(251 191 36 / 0.6);
+      }
+    </style>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
-  <body class="bg-gray-50 text-gray-800 font-sans">
+  <body>
+    <!-- NAVIGATION  -->
     <nav class="bg-white sticky top-0 z-50">
       <div class="px-6 md:px-10 py-3 flex items-center justify-between">
         <!-- Logo -->
@@ -54,7 +124,9 @@
               </div>
             </div> -->
 
-          <a href="./visa.html" class="hover:text-[#FDB71C] text-gray-700"
+          <a
+            href="./visa_details.html"
+            class="hover:text-[#FDB71C] text-gray-700"
             >Visa</a
           >
 
@@ -64,21 +136,19 @@
             >Package</a
           >
           <a href="./about.html" class="hover:text-[#FDB71C] text-gray-700"
-            >About Us</a
+            >Blog</a
+          >
+          <a href="./about.html" class="hover:text-[#FDB71C] text-gray-700"
+            >Contact</a
           >
 
           <!-- Buttons -->
-          <a
-            href="./blog_all.html"
-            class="border border-[#FDB71C] text-[#FDB71C] hover:bg-[#FDB71C] hover:text-white px-4 py-2 rounded-full font-medium shadow-sm transition-all duration-300"
-          >
-            Blog
-          </a>
+          
           <a
             href="./contact.html"
             class="bg-[#FDB71C] text-white hover:bg-[#e0a513] px-4 py-2 rounded-full font-medium shadow-sm transition-all duration-300"
           >
-            Contact
+            Login
           </a>
         </div>
 
@@ -155,313 +225,66 @@
           class="mobile-link block py-2 hover:text-[#FDB71C] text-gray-700"
           >About Us</a
         >
+        <a
+          href="./about.html"
+          class="mobile-link block py-2 hover:text-[#FDB71C] text-gray-700"
+          >About Us</a
+        >
+        <a
+          href="./about.html"
+          class="mobile-link block py-2 hover:text-[#FDB71C] text-gray-700"
+          >Blog</a
+        >
+        <a
+          href="./about.html"
+          class="mobile-link block py-2 hover:text-[#FDB71C] text-gray-700"
+          >Contact</a
+        >
 
         <div class="mt-4 flex flex-wrap gap-3 justify-start">
-          <a
-            href="./blog_all.html"
-            class="mobile-link flex-1 text-center border-2 border-[#FDB71C] text-[#FDB71C] hover:bg-[#FDB71C] hover:text-white px-4 py-2 rounded-full font-medium shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105 min-w-[100px]"
-          >
-            Blog
-          </a>
+          
           <a
             href="./contact.html"
             class="mobile-link flex-1 text-center bg-[#FDB71C] text-white hover:bg-[#e0a513] px-4 py-2 rounded-full font-medium shadow-md hover:shadow-lg transition duration-300 ease-in-out transform hover:scale-105 min-w-[100px]"
           >
-            Contact
+            Login
           </a>
         </div>
       </div>
     </nav>
-    <!-- Hero Section -->
-    <section
-      class="relative h-[400px] bg-center bg-cover flex items-center justify-center"
-      style="
-        background-image: url('https://tripnest.net/visa/visaCountryBg.jpg');
-      "
-    >
-      <div class="relative z-10 w-full max-w-xl px-6">
-        <div class="relative">
-          <input
-            type="text"
-            placeholder="Search country..."
-            class="w-full rounded-xl py-4 pl-12 pr-4 text-lg bg-white/80 shadow-2xl border border-gray-200 placeholder-gray-600 focus:outline-none focus:ring-4 focus:ring-orange-400 transition"
-          />
-          <i
-            class="fa fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none"
-          ></i>
+
+    <!-- NAVIGATION END -->
+    <div class="max-w-5xl mx-auto my-5 p-0 ">
+      <h1 class="text-xl lg:text-3xl font-bold text-[#1a6d91] text-center mb-5 tracking-wide">
+        Visa Application Form
+      </h1>
+
+      <form
+        id="visa-form"
+        class="space-y-14"
+        action="#"
+        method="POST"
+        enctype="multipart/form-data"
+        novalidate
+      >
+        <!-- Traveler container -->
+        <div id="travelers-container">
+          <!-- Single traveler form will be appended here -->
         </div>
-      </div>
-    </section>
 
-    <!-- Search Result Section -->
-
-    <section
-      class="max-w-4xl mx-3 mt-3 lg:mx-auto px-6 py-12 bg-white rounded-lg shadow-md"
-    >
-      
-      <h3
-        class="text-xl font-bold mb-8 border-b-[2px] border-yellow-500 pb-3 text-gray-900"
-      >
-         Visa Requirements
-      </h3>
-      <ul class="space-y-5 text-gray-700 text-lg leading-relaxed">
-        <li class="flex items-center gap-3">
-          <span
-            class="iconify text-yellow-500"
-            data-icon="mdi:checkbox-marked-circle-outline"
-            data-width="24"
-            data-height="24"
-          ></span>
-          Valid passport with at least 6 months validity
-        </li>
-        <li class="flex items-center gap-3">
-          <span
-            class="iconify text-yellow-500"
-            data-icon="mdi:checkbox-marked-circle-outline"
-            data-width="24"
-            data-height="24"
-          ></span>
-          Recent passport-size photograph
-        </li>
-        <li class="flex items-center gap-3">
-          <span
-            class="iconify text-yellow-500"
-            data-icon="mdi:checkbox-marked-circle-outline"
-            data-width="24"
-            data-height="24"
-          ></span>
-          Flight booking details
-        </li>
-        <li class="flex items-center gap-3">
-          <span
-            class="iconify text-yellow-500"
-            data-icon="mdi:checkbox-marked-circle-outline"
-            data-width="24"
-            data-height="24"
-          ></span>
-          Proof of accommodation
-        </li>
-        <li class="flex items-center gap-3">
-          <span
-            class="iconify text-yellow-500"
-            data-icon="mdi:checkbox-marked-circle-outline"
-            data-width="24"
-            data-height="24"
-          ></span>
-          Proof of sufficient funds
-        </li>
-      </ul>
-    </section>
-
-    <!-- Documents by Visa Category Section (unchanged) -->
-    <section class="max-w-4xl mx-auto px-6 py-10">
-      <!-- Heading with stylish underline -->
-        <h3
-        class="text-xl font-bold mb-8 border-b-[2px] border-yellow-500 pb-3 text-gray-900"
-      >
-        Documents by Visa Category
-      </h3>
-
-      <div class="space-y-4">
-        <!-- For Job Holder -->
-        <details class="group bg-white rounded-lg shadow p-5">
-          <summary
-            class="cursor-pointer font-[400] font-semibold text-lg flex justify-between items-center list-none"
+        <section class="flex  flex-wrap gap-4 justify-center sm:justify-start">
+          <button
+            type="button"
+            id="add-traveler-btn"
+            class="btn-outline-yellow"
+            aria-label="Add Traveler"
           >
-            For Job Holder
-            <i
-              class="fa-solid fa-plus text-orange-500 group-open:hidden transition"
-            ></i>
-            <i
-              class="fa-solid fa-minus text-orange-500 hidden group-open:block transition"
-            ></i>
-          </summary>
-          <ul class="mt-4 space-y-2 text-gray-700 text-base ">
-            <li class="flex items-start pb-4">
-              <span
-                class="iconify text-yellow-500 mr-2"
-                data-icon="mdi:checkbox-marked-circle-outline"
-                data-width="24"
-                data-height="24"
-              ></span>
-              No Objection Certificate (NOC) from Employer (with official
-              contact numbers).
-            </li>
-            <li class="flex items-start pb-4">
-              <span
-                class="iconify text-yellow-500 mr-2"
-                data-icon="mdi:checkbox-marked-circle-outline"
-                data-width="24"
-                data-height="24"
-              ></span>
-              Mandatory official ID card copy.
-            </li>
-            <li class="flex items-start pb-4">
-              <span
-                class="iconify text-yellow-500 mr-2"
-                data-icon="mdi:checkbox-marked-circle-outline"
-                data-width="24"
-                data-height="24"
-              ></span>
-              Salary Certificate/Payslip last 03 months (if Savings Account).
-            </li>
-            <li class="flex items-start pb-4">
-              <span
-                class="iconify text-yellow-500 mr-2"
-                data-icon="mdi:checkbox-marked-circle-outline"
-                data-width="24"
-                data-height="24"
-              ></span>
-              BMDC certificate for Doctor.
-            </li>
-            <li class="flex items-start pb-4">
-              <span
-                class="iconify text-yellow-500 mr-2"
-                data-icon="mdi:checkbox-marked-circle-outline"
-                data-width="24"
-                data-height="24"
-              ></span>
-              BAR Council Certificate for Advocate.
-            </li>
-            <li class="flex items-start pb-4">
-              <span
-                class="iconify text-yellow-500 mr-2"
-                data-icon="mdi:checkbox-marked-circle-outline"
-                data-width="24"
-                data-height="24"
-              ></span>
-              GO required with English translation and notary for Govt.
-              employees.
-            </li>
-          </ul>
-        </details>
-
-        <!-- For Business Persons -->
-        <details class="group bg-white rounded-lg shadow p-5">
-          <summary
-            class="cursor-pointer font-semibold text-lg flex justify-between items-center list-none"
-          >
-            For Business Persons
-            <i
-              class="fa-solid fa-plus text-orange-500 group-open:hidden transition"
-            ></i>
-            <i
-              class="fa-solid fa-minus text-orange-500 hidden group-open:block transition"
-            ></i>
-          </summary>
-          <ul class="mt-4 space-y-2 text-gray-700 text-base">
-            <li class="flex items-start pb-4">
-              <span
-                class="iconify text-yellow-500 mr-2"
-                data-icon="mdi:checkbox-marked-circle-outline"
-                data-width="24"
-                data-height="24"
-              ></span>
-              Renewal Trade license copy with notary public (English
-              Translated).
-            </li>
-            <li class="flex items-start pb-4">
-              <span
-                class="iconify text-yellow-500 mr-2"
-                data-icon="mdi:checkbox-marked-circle-outline"
-                data-width="24"
-                data-height="24"
-              ></span>
-              Memorandum for Limited Company.
-            </li>
-            <li class="flex items-start pb-4">
-              <span
-                class="iconify text-yellow-500 mr-2"
-                data-icon="mdi:checkbox-marked-circle-outline"
-                data-width="24"
-                data-height="24"
-              ></span>
-              Office Pad / Company Letter Head Pad.
-            </li>
-          </ul>
-        </details>
-
-        <!-- For Student -->
-        <details class="group bg-white rounded-lg shadow p-5">
-          <summary
-            class="cursor-pointer font-semibold text-lg flex justify-between items-center list-none"
-          >
-            For Student
-            <i
-              class="fa-solid fa-plus text-orange-500 group-open:hidden transition"
-            ></i>
-            <i
-              class="fa-solid fa-minus text-orange-500 hidden group-open:block transition"
-            ></i>
-          </summary>
-          <ul class="mt-4 space-y-2 text-gray-700 text-base">
-            <li class="flex items-start pb-4">
-              <span
-                class="iconify text-yellow-500 mr-2"
-                data-icon="mdi:checkbox-marked-circle-outline"
-                data-width="24"
-                data-height="24"
-              ></span>
-              Student ID card copy.
-            </li>
-            <li class="flex items-start pb-4">
-              <span
-                class="iconify text-yellow-500 mr-2"
-                data-icon="mdi:checkbox-marked-circle-outline"
-                data-width="24"
-                data-height="24"
-              ></span>
-              Birth Certificate (Only for Child & infant).
-            </li>
-            <li class="flex items-start pb-4">
-              <span
-                class="iconify text-yellow-500 mr-2"
-                data-icon="mdi:checkbox-marked-circle-outline"
-                data-width="24"
-                data-height="24"
-              ></span>
-              Travel Letter or Leave Letter from the Educational Institute.
-            </li>
-          </ul>
-        </details>
-
-        <!-- Other -->
-        <details class="group bg-white rounded-lg shadow p-5">
-          <summary
-            class="cursor-pointer font-semibold text-lg flex justify-between items-center list-none"
-          >
-            Other
-            <i
-              class="fa-solid fa-plus text-orange-500 group-open:hidden transition"
-            ></i>
-            <i
-              class="fa-solid fa-minus text-orange-500 hidden group-open:block transition"
-            ></i>
-          </summary>
-          <ul class="mt-4 space-y-2 text-gray-700 text-base">
-            <li class="flex items-start pb-4">
-              <span
-                class="iconify text-yellow-500 mr-2"
-                data-icon="mdi:checkbox-marked-circle-outline"
-                data-width="24"
-                data-height="24"
-              ></span>
-              Marriage Certificate Copy or Nikahnama (If spouse's name is not in
-              passport).
-            </li>
-            <li class="flex items-start pb-4">
-              <span
-                class="iconify text-yellow-500 mr-2"
-                data-icon="mdi:checkbox-marked-circle-outline"
-                data-width="24"
-                data-height="24"
-              ></span>
-              Retirement certificate for Retired Person.
-            </li>
-          </ul>
-        </details>
-      </div>
-    </section>
+            + Add Traveler
+          </button>
+          <button type="submit" class="btn-yellow">Submit All Documents</button>
+        </section>
+      </form>
+    </div>
 
     <!-- FOOTER START -->
     <footer class="bg-gradient-to-br from-[#FFF8E1] to-white backdrop-blur-md">
@@ -654,16 +477,168 @@
 
     <!-- FOOTER END -->
 
-    <script
-      src="https://kit.fontawesome.com/a076d05399.js"
-      crossorigin="anonymous"
-    ></script>
+    <!-- FilePond plugins -->
+    <script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.js"></script>
+    <!-- FilePond library -->
+    <script src="https://unpkg.com/filepond/dist/filepond.min.js"></script>
+
+    <script>
+      // Register FilePond plugins
+      FilePond.registerPlugin(FilePondPluginImagePreview);
+
+      // Template for a traveler form block
+      const travelerTemplate = () => {
+        const index = Date.now(); // unique key for each traveler
+        return `
+        <section class="rounded-lg p-6 space-y-8 shadow-sm ">
+          <h2 class="text-sm lg:text-xl font-semibold text-yellow-500 mb-6 flex justify-between items-center">
+            Primary Contact (Traveler)
+            <button type="button" data-remove="${index}" aria-label="Remove traveler" class="text-red-600 hover:text-red-800 font-bold text-xl">&times;</button>
+          </h2>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div>
+              <label class="block mb-2 text-gray-700 font-semibold" for="given_name_${index}">Given Name* <span class="text-gray-400 text-sm">(First & Middle Name)</span></label>
+              <input type="text" id="given_name_${index}" name="travelers[${index}][given_name]" required placeholder="First & Middle Name" class="w-full border border-gray-300 rounded-md px-4 py-3 placeholder-gray-400 focus:ring-yellow-400" />
+            </div>
+            <div>
+              <label class="block mb-2 text-gray-700 font-semibold" for="surname_${index}">Surname* <span class="text-gray-400 text-sm">(Last Name)</span></label>
+              <input type="text" id="surname_${index}" name="travelers[${index}][surname]" required placeholder="Last Name" class="w-full border border-gray-300 rounded-md px-4 py-3 placeholder-gray-400 focus:ring-yellow-400" />
+            </div>
+            <div>
+              <label class="block mb-2 text-gray-700 font-semibold" for="phone_1_${index}">Phone Number 01*</label>
+              <input type="tel" id="phone_1_${index}" name="travelers[${index}][phone_1]" required placeholder="01615000000" class="w-full border border-gray-300 rounded-md px-4 py-3 placeholder-gray-400 focus:ring-yellow-400" />
+            </div>
+            <div>
+              <label class="block mb-2 text-gray-700 font-semibold" for="phone_2_${index}">Phone Number 02 <span class="text-gray-400 text-sm">(Secondary number)</span></label>
+              <input type="tel" id="phone_2_${index}" name="travelers[${index}][phone_2]" placeholder="Optional" class="w-full border border-gray-300 rounded-md px-4 py-3 placeholder-gray-400 focus:ring-yellow-400" />
+            </div>
+            <div class="sm:col-span-2">
+              <label class="block mb-2 text-gray-700 font-semibold" for="email_${index}">Email*</label>
+              <input type="email" id="email_${index}" name="travelers[${index}][email]" required placeholder="example@example.com" class="w-full border border-gray-300 rounded-md px-4 py-3 placeholder-gray-400 focus:ring-yellow-400" />
+            </div>
+            <div class="sm:col-span-2">
+              <label class="block mb-2 text-gray-700 font-semibold" for="address_${index}">Current Address*</label>
+              <textarea id="address_${index}" name="travelers[${index}][address]" rows="3" required placeholder="Present Address" class="w-full border border-gray-300 rounded-md px-4 py-3 placeholder-gray-400 focus:ring-yellow-400 resize-none"></textarea>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold mb-4">General Documents</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="passport_scanned_copy_${index}" class="block mb-2 text-gray-700 font-semibold">
+                  1. Passport Scanned Copy (JPG)*
+                </label>
+                <input type="file" id="passport_scanned_copy_${index}" name="travelers[${index}][passport_scanned_copy]" class="filepond w-full" accept="image/jpeg" required />
+              </div>
+
+              <div>
+                <label for="passport_photo_${index}" class="block mb-2 text-gray-700 font-semibold">
+                  2. Recent Passport Size Photo (3.5* 4.5mm) (JPG)*
+                </label>
+                <input type="file" id="passport_photo_${index}" name="travelers[${index}][passport_photo]" class="filepond w-full" accept="image/jpeg" required />
+              </div>
+
+              <div>
+                <label for="bank_statement_${index}" class="block mb-2 text-gray-700 font-semibold">
+                  3. Bank Statement of the last 06 months (PDF)*
+                </label>
+                <input type="file" id="bank_statement_${index}" name="travelers[${index}][bank_statement]" class="filepond w-full" accept="application/pdf" required />
+              </div>
+
+              <div>
+                <label for="bank_solvency_certificate_${index}" class="block mb-2 text-gray-700 font-semibold">
+                  4. Bank Solvency Certificate (PDF)*
+                </label>
+                <input type="file" id="bank_solvency_certificate_${index}" name="travelers[${index}][bank_solvency_certificate]" class="filepond w-full" accept="application/pdf" required />
+              </div>
+
+              <div>
+                <label for="hotel_booking_copy_${index}" class="block mb-2 text-gray-700 font-semibold">
+                  5. Hotel Booking Copy
+                </label>
+                <input type="file" id="hotel_booking_copy_${index}" name="travelers[${index}][hotel_booking_copy]" class="filepond w-full" accept="image/jpeg,image/png,application/pdf" />
+              </div>
+
+              <div>
+                <label for="air_ticket_booking_copy_${index}" class="block mb-2 text-gray-700 font-semibold">
+                  6. Air Ticket Booking Copy
+                </label>
+                <input type="file" id="air_ticket_booking_copy_${index}" name="travelers[${index}][air_ticket_booking_copy]" class="filepond w-full" accept="image/jpeg,image/png,application/pdf" />
+              </div>
+
+              <div>
+                <label for="previous_visa_copy_${index}" class="block mb-2 text-gray-700 font-semibold">
+                  7. Previous Visa Copy
+                </label>
+                <input type="file" id="previous_visa_copy_${index}" name="travelers[${index}][previous_visa_copy]" class="filepond w-full" accept="image/jpeg,image/png,application/pdf" />
+              </div>
+
+              <div>
+                <label for="marriage_certificate_${index}" class="block mb-2 text-gray-700 font-semibold">
+                  8. Marriage Certificate or Nikahnama (if spouse's name is not on the applicant's passport)
+                </label>
+                <input type="file" id="marriage_certificate_${index}" name="travelers[${index}][marriage_certificate]" class="filepond w-full" accept="image/jpeg,image/png,application/pdf" />
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <label for="visa_type_${index}" class="block mb-3 text-gray-700 font-semibold text-lg">Visa Type *</label>
+            <select id="visa_type_${index}" name="travelers[${index}][visa_type]" required class="w-full border border-gray-300 rounded-md px-4 py-3 placeholder-gray-400 focus:ring-yellow-400">
+              <option value="" disabled selected>Select your occupation</option>
+              <option value="job_holder">Job Holder</option>
+              <option value="business_person">Business Person</option>
+              <option value="student">Student</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </section>
+      `;
+      };
+
+      const travelersContainer = document.getElementById("travelers-container");
+      const addTravelerBtn = document.getElementById("add-traveler-btn");
+
+      // Function to initialize FilePond on all inputs inside a container
+      function initFilePondOn(container) {
+        container.querySelectorAll("input.filepond").forEach((input) => {
+          FilePond.create(input, {
+            allowMultiple: false,
+            acceptedFileTypes: ["image/jpeg", "image/png", "application/pdf"],
+            labelFileTypeNotAllowed:
+              "Only JPG, PNG, and PDF files are allowed.",
+          });
+        });
+      }
+
+      // Add initial traveler form on load
+      function addTraveler() {
+        const div = document.createElement("div");
+        div.innerHTML = travelerTemplate();
+        travelersContainer.appendChild(div);
+        initFilePondOn(div);
+
+        // Add remove handler for this traveler
+        div
+          .querySelector("button[data-remove]")
+          .addEventListener("click", (e) => {
+            div.remove();
+          });
+      }
+
+      addTravelerBtn.addEventListener("click", addTraveler);
+
+      // Add first traveler by default on page load
+      addTraveler();
+    </script>
+
     <!-- Tailwind & Iconify CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
     <script src="./assets/js/app.js"></script>
   </body>
 </html>

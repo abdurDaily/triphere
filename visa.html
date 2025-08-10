@@ -1,142 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Visa Processing</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
+  </head>
 
-<body class="bg-gray-50 min-h-screen flex flex-col items-center p-6">
-
+  <body class="bg-gray-50 min-h-screen flex flex-col items-center p-6">
     <!-- Search Box -->
     <div class="w-full max-w-lg mb-6 relative">
-        <input type="text" id="countrySearch" placeholder="Search country..."
-            class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-            autocomplete="off" />
-        <ul id="suggestions"
-            class="absolute w-full bg-white border rounded-lg mt-1 shadow max-h-52 overflow-auto hidden z-10"></ul>
+      <input
+        type="text"
+        id="countrySearch"
+        placeholder="Search country..."
+        class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+        autocomplete="off"
+      />
+      <ul
+        id="suggestions"
+        class="absolute w-full bg-white border rounded-lg mt-1 shadow max-h-52 overflow-auto hidden z-10"
+      ></ul>
     </div>
 
     <!-- Country Info Card -->
-    <div id="countryCard" class="hidden bg-white rounded-lg shadow p-6 w-full max-w-lg">
-        <div class="flex items-center gap-4">
-            <img id="countryFlag" src="" alt="Flag" class="w-16 h-16 rounded border object-cover">
-            <div>
-                <h2 id="countryName" class="text-xl font-semibold"></h2>
-                <p id="countryPrice" class="text-gray-600 mt-1"></p>
-            </div>
+    <div
+      id="countryCard"
+      class="hidden bg-white rounded-lg shadow p-6 w-full max-w-lg"
+    >
+      <div class="flex items-center gap-4">
+        <img
+          id="countryFlag"
+          src=""
+          alt="Flag"
+          class="w-16 h-16 rounded border object-cover"
+        />
+        <div>
+          <h2 id="countryName" class="text-xl font-semibold"></h2>
+          <p id="countryPrice" class="text-gray-600 mt-1"></p>
         </div>
-        <button id="bookVisaBtn" class="mt-6 bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700">
-            Book Your Visa Now
-        </button>
+      </div>
+      <button
+        id="bookVisaBtn"
+        class="mt-6 bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700"
+      >
+        Book Your Visa Now
+      </button>
     </div>
 
     <!-- Visa Application Form -->
-    <div id="visaForm" class="hidden bg-white rounded-lg shadow p-6 w-full max-w-lg mt-6">
-        <h3 class="text-lg font-semibold mb-4">Visa Application Form</h3>
-        <form class="space-y-4">
-            <input type="text" placeholder="Full Name" class="w-full px-4 py-2 border rounded-lg" required>
-            <input type="email" placeholder="Email Address" class="w-full px-4 py-2 border rounded-lg" required>
-            <input type="text" placeholder="Passport Number" class="w-full px-4 py-2 border rounded-lg" required>
-            <input type="date" placeholder="Date of Birth" class="w-full px-4 py-2 border rounded-lg" required>
-            <textarea placeholder="Additional Information" class="w-full px-4 py-2 border rounded-lg"></textarea>
-            <button type="submit" class="bg-green-600 text-white px-5 py-2 rounded-lg hover:bg-green-700">
-                Submit Application
-            </button>
-        </form>
+    <div
+      id="visaForm"
+      class="hidden bg-white rounded-lg shadow p-6 w-full max-w-lg mt-6"
+    >
+      <h3 class="text-lg font-semibold mb-4">Visa Application Form</h3>
+      <form class="space-y-4">
+        <input
+          type="text"
+          placeholder="Full Name"
+          class="w-full px-4 py-2 border rounded-lg"
+          required
+        />
+        <input
+          type="email"
+          placeholder="Email Address"
+          class="w-full px-4 py-2 border rounded-lg"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Passport Number"
+          class="w-full px-4 py-2 border rounded-lg"
+          required
+        />
+        <input
+          type="date"
+          placeholder="Date of Birth"
+          class="w-full px-4 py-2 border rounded-lg"
+          required
+        />
+        <textarea
+          placeholder="Additional Information"
+          class="w-full px-4 py-2 border rounded-lg"
+        ></textarea>
+        <button
+          type="submit"
+          class="bg-green-600 text-white px-5 py-2 rounded-lg hover:bg-green-700"
+        >
+          Submit Application
+        </button>
+      </form>
     </div>
 
     <script>
-        const searchInput = document.getElementById("countrySearch");
-        const suggestions = document.getElementById("suggestions");
-        const countryCard = document.getElementById("countryCard");
-        const countryFlag = document.getElementById("countryFlag");
-        const countryName = document.getElementById("countryName");
-        const countryPrice = document.getElementById("countryPrice");
-        const bookVisaBtn = document.getElementById("bookVisaBtn");
-        const visaForm = document.getElementById("visaForm");
+      const searchInput = document.getElementById("countrySearch");
+      const suggestions = document.getElementById("suggestions");
+      const countryCard = document.getElementById("countryCard");
+      const countryFlag = document.getElementById("countryFlag");
+      const countryName = document.getElementById("countryName");
+      const countryPrice = document.getElementById("countryPrice");
+      const bookVisaBtn = document.getElementById("bookVisaBtn");
+      const visaForm = document.getElementById("visaForm");
 
-        let countries = [];
+      let countries = [];
 
-        // Country-wise visa prices (you can update or fetch from your DB later)
-        const visaPrices = {
-            Thailand: 5900,
-            Japan: 8500,
-            USA: 15000,
-            Canada: 12000,
-            Malaysia: 4000,
-            Singapore: 4500
-        };
+      // Country-wise visa prices (you can update or fetch from your DB later)
+      const visaPrices = {
+        Thailand: 5900,
+        Japan: 8500,
+        USA: 15000,
+        Canada: 12000,
+        Malaysia: 4000,
+        Singapore: 4500,
+      };
 
-        // Fetch countries with flags once
-        fetch("https://countriesnow.space/api/v0.1/countries/flag/images")
-            .then(res => res.json())
-            .then(data => {
-                countries = data.data; // array of { name, flag }
-            });
-
-        // Filter and show suggestions
-        searchInput.addEventListener("input", () => {
-            const query = searchInput.value.trim().toLowerCase();
-            suggestions.innerHTML = "";
-            visaForm.classList.add("hidden");
-            countryCard.classList.add("hidden");
-            if (!query) {
-                suggestions.classList.add("hidden");
-                return;
-            }
-
-            const matches = countries.filter(c => c.name.toLowerCase().includes(query));
-            if (matches.length) {
-                suggestions.classList.remove("hidden");
-                matches.slice(0, 7).forEach(country => {
-                    const li = document.createElement("li");
-                    li.textContent = country.name;
-                    li.className = "px-4 py-2 hover:bg-gray-100 cursor-pointer";
-                    li.onclick = () => selectCountry(country);
-                    suggestions.appendChild(li);
-                });
-            } else {
-                suggestions.classList.add("hidden");
-            }
+      // Fetch countries with flags once
+      fetch("https://countriesnow.space/api/v0.1/countries/flag/images")
+        .then((res) => res.json())
+        .then((data) => {
+          countries = data.data; // array of { name, flag }
         });
 
-        // Select country from suggestion
-        function selectCountry(country) {
-            searchInput.value = country.name;
-            suggestions.classList.add("hidden");
-
-            countryFlag.src = country.flag;
-            countryFlag.alt = `${country.name} Flag`;
-            countryName.textContent = country.name;
-
-            const price = visaPrices[country.name];
-            if (price) {
-                countryPrice.textContent = `Visa Fee: BDT ${price.toLocaleString()}`;
-            } else {
-                countryPrice.textContent = "Visa Fee: Contact us for pricing";
-            }
-
-            countryCard.classList.remove("hidden");
-            visaForm.classList.add("hidden");
+      // Filter and show suggestions
+      searchInput.addEventListener("input", () => {
+        const query = searchInput.value.trim().toLowerCase();
+        suggestions.innerHTML = "";
+        visaForm.classList.add("hidden");
+        countryCard.classList.add("hidden");
+        if (!query) {
+          suggestions.classList.add("hidden");
+          return;
         }
 
-        // Show visa form on button click
-        bookVisaBtn.addEventListener("click", () => {
-            visaForm.classList.remove("hidden");
-            visaForm.scrollIntoView({ behavior: "smooth" });
-        });
+        const matches = countries.filter((c) =>
+          c.name.toLowerCase().includes(query)
+        );
+        if (matches.length) {
+          suggestions.classList.remove("hidden");
+          matches.slice(0, 7).forEach((country) => {
+            const li = document.createElement("li");
+            li.textContent = country.name;
+            li.className = "px-4 py-2 hover:bg-gray-100 cursor-pointer";
+            li.onclick = () => selectCountry(country);
+            suggestions.appendChild(li);
+          });
+        } else {
+          suggestions.classList.add("hidden");
+        }
+      });
 
-        // Close suggestions on clicking outside
-        document.addEventListener("click", (e) => {
-            if (!suggestions.contains(e.target) && e.target !== searchInput) {
-                suggestions.classList.add("hidden");
-            }
-        });
+      // Select country from suggestion
+      function selectCountry(country) {
+        searchInput.value = country.name;
+        suggestions.classList.add("hidden");
+
+        countryFlag.src = country.flag;
+        countryFlag.alt = `${country.name} Flag`;
+        countryName.textContent = country.name;
+
+        const price = visaPrices[country.name];
+        if (price) {
+          countryPrice.textContent = `Visa Fee: BDT ${price.toLocaleString()}`;
+        } else {
+          countryPrice.textContent = "Visa Fee: Contact us for pricing";
+        }
+
+        countryCard.classList.remove("hidden");
+        visaForm.classList.add("hidden");
+      }
+
+      // Show visa form on button click
+      bookVisaBtn.addEventListener("click", () => {
+        visaForm.classList.remove("hidden");
+        visaForm.scrollIntoView({ behavior: "smooth" });
+      });
+
+      // Close suggestions on clicking outside
+      document.addEventListener("click", (e) => {
+        if (!suggestions.contains(e.target) && e.target !== searchInput) {
+          suggestions.classList.add("hidden");
+        }
+      });
     </script>
-
-</body>
-
+  </body>
 </html>
